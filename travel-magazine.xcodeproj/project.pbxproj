@@ -49,6 +49,7 @@
 		C4B80BD02C03562500710EA3 = {
 			isa = PBXGroup;
 			children = (
+				C4B80BF42C03592500710EA3 /* README.md */,
 				C4B80BDB2C03562500710EA3 /* travel-magazine */,
 				C4B80BDA2C03562500710EA3 /* Products */,
 			);
@@ -75,7 +76,6 @@
 				C4B80BEA2C03562600710EA3 /* Info.plist */,
 				C4B80BF72C035BA500710EA3 /* TravelTableViewController.swift */,
 				C4B80BF22C0358E100710EA3 /* TravelTableViewCell.swift */,
-				C4B80BF42C03592500710EA3 /* README.md */,
 			);
 			path = "travel-magazine";
 			sourceTree = "<group>";
