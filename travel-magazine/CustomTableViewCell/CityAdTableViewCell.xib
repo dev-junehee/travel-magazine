@@ -24,7 +24,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8z9-sj-Dcb">
-                        <rect key="frame" x="282" y="10" width="20" height="14"/>
+                        <rect key="frame" x="278" y="14" width="20" height="14"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="4IP-1i-o92"/>
                             <constraint firstAttribute="height" constant="14" id="l5Q-WY-yUl"/>
@@ -40,8 +40,8 @@
                     <constraint firstItem="5Jl-3g-bKo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="CE3-q1-N5Y"/>
                     <constraint firstAttribute="trailing" secondItem="5Jl-3g-bKo" secondAttribute="trailing" constant="16" id="Mgn-B2-ccz"/>
                     <constraint firstItem="5Jl-3g-bKo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="g8X-rT-p48"/>
-                    <constraint firstItem="5Jl-3g-bKo" firstAttribute="trailing" secondItem="8z9-sj-Dcb" secondAttribute="trailing" constant="2" id="gqO-10-d8W"/>
-                    <constraint firstItem="8z9-sj-Dcb" firstAttribute="top" secondItem="5Jl-3g-bKo" secondAttribute="top" constant="2" id="qI2-N1-Y3Z"/>
+                    <constraint firstItem="5Jl-3g-bKo" firstAttribute="trailing" secondItem="8z9-sj-Dcb" secondAttribute="trailing" constant="6" id="gqO-10-d8W"/>
+                    <constraint firstItem="8z9-sj-Dcb" firstAttribute="top" secondItem="5Jl-3g-bKo" secondAttribute="top" constant="6" id="qI2-N1-Y3Z"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

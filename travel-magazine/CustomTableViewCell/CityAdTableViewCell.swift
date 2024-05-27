@@ -25,11 +25,13 @@ class CityAdTableViewCell: UITableViewCell {
         adTextLabel.numberOfLines = 0
         
         adTextLabel.randomBackgroundColor()
-        adTextLabel.layer.cornerRadius = 20
+        adTextLabel.clipsToBounds = true
+        adTextLabel.layer.cornerRadius = 10
         
         adBadgeLabel.textAlignment = .center
         adBadgeLabel.backgroundColor = .white
-        adBadgeLabel.layer.cornerRadius = 16
+        adBadgeLabel.clipsToBounds = true
+        adBadgeLabel.layer.cornerRadius = 4
     }
     
     func configureCellData(data: Travel) {
