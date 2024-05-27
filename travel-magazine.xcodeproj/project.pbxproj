@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C48B9DD62C048AE700073FA5 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48B9DD52C048AE700073FA5 /* Restaurant.swift */; };
+		C48B9DD92C04903100073FA5 /* RestaurantTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C48B9DD82C04903100073FA5 /* RestaurantTableViewCell.xib */; };
+		C48B9DDA2C04903100073FA5 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48B9DD72C04903100073FA5 /* RestaurantTableViewCell.swift */; };
+		C48B9DDC2C04910B00073FA5 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48B9DDB2C04910B00073FA5 /* RestaurantViewController.swift */; };
+		C48B9DDF2C04A06E00073FA5 /* UILable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48B9DDE2C04A06E00073FA5 /* UILable+Extension.swift */; };
+		C48B9DE12C04A2E600073FA5 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48B9DE02C04A2E600073FA5 /* UIButton+Extension.swift */; };
 		C4B80BDD2C03562500710EA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B80BDC2C03562500710EA3 /* AppDelegate.swift */; };
 		C4B80BDF2C03562500710EA3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B80BDE2C03562500710EA3 /* SceneDelegate.swift */; };
 		C4B80BE12C03562500710EA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B80BE02C03562500710EA3 /* ViewController.swift */; };
@@ -20,6 +26,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C48B9DD52C048AE700073FA5 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		C48B9DD72C04903100073FA5 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
+		C48B9DD82C04903100073FA5 /* RestaurantTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantTableViewCell.xib; sourceTree = "<group>"; };
+		C48B9DDB2C04910B00073FA5 /* RestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
+		C48B9DDE2C04A06E00073FA5 /* UILable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILable+Extension.swift"; sourceTree = "<group>"; };
+		C48B9DE02C04A2E600073FA5 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		C4B80BD92C03562500710EA3 /* travel-magazine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "travel-magazine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4B80BDC2C03562500710EA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4B80BDE2C03562500710EA3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +58,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C48B9DD12C048A6100073FA5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C4B80BF72C035BA500710EA3 /* TravelTableViewController.swift */,
+				C48B9DDB2C04910B00073FA5 /* RestaurantViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C48B9DD22C048A7200073FA5 /* CustomTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C4B80BF22C0358E100710EA3 /* TravelTableViewCell.swift */,
+				C48B9DD72C04903100073FA5 /* RestaurantTableViewCell.swift */,
+				C48B9DD82C04903100073FA5 /* RestaurantTableViewCell.xib */,
+			);
+			path = CustomTableViewCell;
+			sourceTree = "<group>";
+		};
+		C48B9DDD2C0495DD00073FA5 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C48B9DDE2C04A06E00073FA5 /* UILable+Extension.swift */,
+				C48B9DE02C04A2E600073FA5 /* UIButton+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		C4B80BD02C03562500710EA3 = {
 			isa = PBXGroup;
 			children = (
@@ -66,16 +106,18 @@
 		C4B80BDB2C03562500710EA3 /* travel-magazine */ = {
 			isa = PBXGroup;
 			children = (
+				C48B9DDD2C0495DD00073FA5 /* Extension */,
+				C48B9DD22C048A7200073FA5 /* CustomTableViewCell */,
+				C48B9DD12C048A6100073FA5 /* Controller */,
 				C4B80BDC2C03562500710EA3 /* AppDelegate.swift */,
 				C4B80BDE2C03562500710EA3 /* SceneDelegate.swift */,
 				C4B80BF02C03579600710EA3 /* MagazineInfo.swift */,
+				C48B9DD52C048AE700073FA5 /* Restaurant.swift */,
 				C4B80BE02C03562500710EA3 /* ViewController.swift */,
 				C4B80BE22C03562500710EA3 /* Main.storyboard */,
-				C4B80BE52C03562600710EA3 /* Assets.xcassets */,
 				C4B80BE72C03562600710EA3 /* LaunchScreen.storyboard */,
+				C4B80BE52C03562600710EA3 /* Assets.xcassets */,
 				C4B80BEA2C03562600710EA3 /* Info.plist */,
-				C4B80BF72C035BA500710EA3 /* TravelTableViewController.swift */,
-				C4B80BF22C0358E100710EA3 /* TravelTableViewCell.swift */,
 			);
 			path = "travel-magazine";
 			sourceTree = "<group>";
@@ -144,6 +186,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C48B9DD92C04903100073FA5 /* RestaurantTableViewCell.xib in Resources */,
 				C4B80BE62C03562600710EA3 /* Assets.xcassets in Resources */,
 				C4B80BE92C03562600710EA3 /* Base in Resources */,
 				C4B80BE42C03562500710EA3 /* Base in Resources */,
@@ -159,9 +202,14 @@
 			files = (
 				C4B80BE12C03562500710EA3 /* ViewController.swift in Sources */,
 				C4B80BF12C03579600710EA3 /* MagazineInfo.swift in Sources */,
+				C48B9DDF2C04A06E00073FA5 /* UILable+Extension.swift in Sources */,
+				C48B9DE12C04A2E600073FA5 /* UIButton+Extension.swift in Sources */,
 				C4B80BDD2C03562500710EA3 /* AppDelegate.swift in Sources */,
+				C48B9DD62C048AE700073FA5 /* Restaurant.swift in Sources */,
+				C48B9DDC2C04910B00073FA5 /* RestaurantViewController.swift in Sources */,
 				C4B80BF32C0358E100710EA3 /* TravelTableViewCell.swift in Sources */,
 				C4B80BF82C035BA500710EA3 /* TravelTableViewController.swift in Sources */,
+				C48B9DDA2C04903100073FA5 /* RestaurantTableViewCell.swift in Sources */,
 				C4B80BDF2C03562500710EA3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
