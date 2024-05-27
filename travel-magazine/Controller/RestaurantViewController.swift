@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RestaurantViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RestaurantViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     @IBOutlet var foodSearchBar: UISearchBar!
     @IBOutlet var foodTableView: UITableView!
@@ -29,6 +29,9 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
         // 재사용 커스텀 셀(XIB) Register
         let xib = UINib(nibName: "RestaurantTableViewCell", bundle: nil)
         foodTableView.register(xib, forCellReuseIdentifier: "RestaurantTableViewCell")
+        
+        // 서치바
+        foodSearchBar.delegate = self
         
         // 첫 로드 시 전체 식당 데이터 보여주기
         filteredList = restaurantList
