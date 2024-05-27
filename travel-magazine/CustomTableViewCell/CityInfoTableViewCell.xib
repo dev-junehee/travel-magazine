@@ -72,6 +72,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="cityImageView" destination="8TS-9P-i1A" id="ndj-TO-It5"/>
+                <outlet property="likeButton" destination="emI-00-8Lb" id="MSj-bh-hx4"/>
                 <outlet property="placeRateLabel" destination="h8X-qN-j6U" id="edw-d5-XSA"/>
                 <outlet property="placeSubTitle" destination="kTF-hf-Ruo" id="hvq-8w-G2R"/>
                 <outlet property="placeTitle" destination="b9u-Ms-ivT" id="H08-5h-Fdr"/>

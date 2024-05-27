@@ -16,6 +16,7 @@ class CityInfoTableViewCell: UITableViewCell {
     @IBOutlet var placeRateLabel: UILabel!
     
     @IBOutlet var cityImageView: UIImageView!
+    @IBOutlet var likeButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,27 +25,35 @@ class CityInfoTableViewCell: UITableViewCell {
 
     
     func configureCellUI() {
-        placeTitle.font = .boldSystemFont(ofSize: 14)
+        placeTitle.textColor = .black
+        placeTitle.font = .boldSystemFont(ofSize: 16)
         
-        placeTitle.textColor = .darkGray
-        placeSubTitle.font = .boldSystemFont(ofSize: 10)
+        placeSubTitle.textColor = .darkGray
+        placeSubTitle.font = .boldSystemFont(ofSize: 12)
+        placeSubTitle.numberOfLines = 0
         
         placeRateLabel.textColor = .darkGray
-        placeRateLabel.font = .systemFont(ofSize: 10)
+        placeRateLabel.font = .systemFont(ofSize: 12)
         
-        cityImageView.layer.cornerRadius = 12
+        cityImageView.layer.cornerRadius = 8
+        
+        likeButton.tintColor = .systemPink
     }
     
     func configureCellData(data: Travel) {
         placeTitle.text = data.title
         placeSubTitle.text = data.description
         placeRateLabel.text = """
-        별점 \(String(describing: data.grade))/5 • 저장 \(String(describing: data.save?.formatted()))
+        별점 \(String(describing: data.grade!))/5 • 저장 \(String(describing: data.save!.formatted()))
         """
         
-//        let url = URL(string: data.travel_image)
-//        cityImageView.kf.setImage(with: url)
+        let url = URL(string: data.travel_image!)
+        cityImageView.kf.setImage(with: url)
         cityImageView.contentMode = .scaleAspectFill
+        
+        guard let heart = data.like! ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart") else { return }
+        likeButton.setImage(heart, for: .normal)
+        likeButton.backgroundColor = .clear
     }
     
     

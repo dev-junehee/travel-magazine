@@ -23,4 +23,14 @@ extension UILabel {
         self.textColor = .systemGray
         self.numberOfLines = 0
     }
+    
+    func randomBackgroundColor() {
+        let R = CGFloat.random(in: 0...1)
+        let G = CGFloat.random(in: 0...1)
+        let B = CGFloat.random(in: 0...1)
+        
+        let color = UIColor(red: R, green: G, blue: B, alpha: 0.5)
+        self.backgroundColor = color
+    }
+    
 }

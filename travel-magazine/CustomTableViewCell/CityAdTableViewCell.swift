@@ -11,22 +11,25 @@ class CityAdTableViewCell: UITableViewCell {
     
     @IBOutlet var adTextLabel: UILabel!
     @IBOutlet var adBadgeLabel: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         configureCellUI()
     }
     
     func configureCellUI() {
+        
         adTextLabel.font = .boldSystemFont(ofSize: 14)
         adTextLabel.textColor = .black
         adTextLabel.textAlignment = .center
         adTextLabel.numberOfLines = 0
         
-        adTextLabel.font = .systemFont(ofSize: 12)
-        adTextLabel.textAlignment = .center
-        adBadgeLabel.layer.cornerRadius = 16
+        adTextLabel.randomBackgroundColor()
+        adTextLabel.layer.cornerRadius = 20
+        
+        adBadgeLabel.textAlignment = .center
         adBadgeLabel.backgroundColor = .white
+        adBadgeLabel.layer.cornerRadius = 16
     }
     
     func configureCellData(data: Travel) {

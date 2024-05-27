@@ -18,8 +18,6 @@ class CityInfoViewController: UIViewController, UITableViewDelegate, UITableView
 
         navigationItem.title = "도시 상세 정보"
         
-        cityTableView.rowHeight = 130
-        
         cityTableView.delegate = self
         cityTableView.dataSource = self
         
@@ -41,12 +39,16 @@ class CityInfoViewController: UIViewController, UITableViewDelegate, UITableView
         if city.ad {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CityAdTableViewCell", for: indexPath) as! CityAdTableViewCell
             
+            tableView.rowHeight = 100
+            
             cell.configureCellUI()
             cell.configureCellData(data: city)
             
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CityInfoTableViewCell", for: indexPath) as! CityInfoTableViewCell
+            
+            tableView.rowHeight = 130
             
             cell.configureCellUI()
             cell.configureCellData(data: city)
