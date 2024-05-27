@@ -197,7 +197,7 @@
             </objects>
             <point key="canvasLocation" x="-131" y="1058"/>
         </scene>
-        <!--City Info View Controller-->
+        <!--도시 상세 정보-->
         <scene sceneID="ZOe-SF-CWU">
             <objects>
                 <viewController id="UCE-ZV-ccL" customClass="CityInfoViewController" customModule="travel_magazine" customModuleProvider="target" sceneMemberID="viewController">
@@ -205,20 +205,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JKK-aq-0JB">
-                                <rect key="frame" x="95" y="338" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JKK-aq-0JB">
+                                <rect key="frame" x="0.0" y="103" width="430" height="829"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CityInfoTableViewCell" rowHeight="113" id="h23-a3-i4L" customClass="CityInfoTableViewCell" customModule="travel_magazine" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="430" height="113"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h23-a3-i4L" id="6Dy-yl-fFX">
+                                            <rect key="frame" x="0.0" y="0.0" width="430" height="113"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CityAdTableViewCell" rowHeight="121" id="mbd-iE-0n6" customClass="CityAdTableViewCell" customModule="travel_magazine" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="163" width="430" height="121"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mbd-iE-0n6" id="SBu-LF-r24">
+                                            <rect key="frame" x="0.0" y="0.0" width="430" height="121"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2f8-hn-ELe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JKK-aq-0JB" firstAttribute="top" secondItem="2f8-hn-ELe" secondAttribute="top" id="Eky-za-PaG"/>
+                            <constraint firstAttribute="bottom" secondItem="JKK-aq-0JB" secondAttribute="bottom" id="gqU-yP-sed"/>
+                            <constraint firstItem="2f8-hn-ELe" firstAttribute="trailing" secondItem="JKK-aq-0JB" secondAttribute="trailing" id="vO6-K4-1Zx"/>
+                            <constraint firstItem="JKK-aq-0JB" firstAttribute="leading" secondItem="2f8-hn-ELe" secondAttribute="leading" id="wCF-hc-PvC"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="H4P-PE-pYY"/>
+                    <navigationItem key="navigationItem" title="도시 상세 정보" id="H4P-PE-pYY"/>
+                    <connections>
+                        <outlet property="cityTableView" destination="JKK-aq-0JB" id="tDY-V9-xxL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hvw-th-feC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="688" y="1058"/>
+            <point key="canvasLocation" x="687.90697674418607" y="1057.7253218884121"/>
         </scene>
         <!--맛집-->
         <scene sceneID="4Py-Md-9D9">
