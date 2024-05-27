@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C4550D142C04B54B005DF918 /* CityInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4550D132C04B54B005DF918 /* CityInfoViewController.swift */; };
 		C48B9DD62C048AE700073FA5 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48B9DD52C048AE700073FA5 /* Restaurant.swift */; };
 		C48B9DD92C04903100073FA5 /* RestaurantTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C48B9DD82C04903100073FA5 /* RestaurantTableViewCell.xib */; };
 		C48B9DDA2C04903100073FA5 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48B9DD72C04903100073FA5 /* RestaurantTableViewCell.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C4550D132C04B54B005DF918 /* CityInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInfoViewController.swift; sourceTree = "<group>"; };
 		C48B9DD52C048AE700073FA5 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		C48B9DD72C04903100073FA5 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		C48B9DD82C04903100073FA5 /* RestaurantTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantTableViewCell.xib; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			children = (
 				C4B80BF72C035BA500710EA3 /* TravelTableViewController.swift */,
 				C48B9DDB2C04910B00073FA5 /* RestaurantViewController.swift */,
+				C4550D132C04B54B005DF918 /* CityInfoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				C4B80BF82C035BA500710EA3 /* TravelTableViewController.swift in Sources */,
 				C48B9DDA2C04903100073FA5 /* RestaurantTableViewCell.swift in Sources */,
 				C4B80BDF2C03562500710EA3 /* SceneDelegate.swift in Sources */,
+				C4550D142C04B54B005DF918 /* CityInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
