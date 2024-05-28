@@ -175,7 +175,11 @@
                             <outletCollection property="gestureRecognizers" destination="ukd-Iv-IaW" appends="YES" id="sUU-hO-hcT"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="맛집을 찾아요" id="aur-5s-CLC"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="맛집을 찾아요" id="aur-5s-CLC">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="Det-hx-V2c"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="foodSearchBar" destination="B8r-1v-JER" id="q8f-Ma-tuN"/>
                         <outlet property="foodTableView" destination="Ukd-BM-8uv" id="B7D-A8-Pvm"/>
