@@ -134,7 +134,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ukd-BM-8uv">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ukd-BM-8uv">
                                 <rect key="frame" x="0.0" y="147" width="430" height="785"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -161,6 +161,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Aaf-u3-Jsk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Ukd-BM-8uv" firstAttribute="leading" secondItem="Aaf-u3-Jsk" secondAttribute="leading" id="A5q-fl-hD1"/>
                             <constraint firstItem="B8r-1v-JER" firstAttribute="trailing" secondItem="Aaf-u3-Jsk" secondAttribute="trailing" id="Tgz-4O-BfL"/>
@@ -170,6 +171,9 @@
                             <constraint firstItem="Ukd-BM-8uv" firstAttribute="bottom" secondItem="dlv-yb-PDz" secondAttribute="bottom" id="kZA-4b-RAM"/>
                             <constraint firstItem="B8r-1v-JER" firstAttribute="top" secondItem="Aaf-u3-Jsk" secondAttribute="top" id="wXD-Y5-st8"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ukd-Iv-IaW" appends="YES" id="sUU-hO-hcT"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="맛집을 찾아요" id="aur-5s-CLC"/>
                     <connections>
@@ -178,6 +182,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XjG-mJ-9L4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ukd-Iv-IaW"/>
             </objects>
             <point key="canvasLocation" x="689" y="321"/>
         </scene>

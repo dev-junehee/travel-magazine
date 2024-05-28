@@ -2,9 +2,13 @@
 ### Travel Magazine App
 
 ## Study for
+- AutoLayout
 - TableViewController, Custom TableView 활용
 - UIVIewController + TableView + Custom Cell
 - Struct 구조체 활용
+    - 저장 프로퍼티, 연산 프로퍼티
+    - 인스턴스 프로퍼티, 타입 프로퍼티
+    - 지연 저장 프로퍼티
 - Kingfisher 라이브러리 활용
 - DateFormetter 활용 (iOS 15이상)
 - Extension

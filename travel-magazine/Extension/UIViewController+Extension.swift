@@ -8,6 +8,7 @@
 import UIKit
 
 extension UIViewController {
+    // 네비게이션 아이템 타이틀 설정
     func configureViewTitle(_ title: String) {
         navigationItem.title = title
     }
