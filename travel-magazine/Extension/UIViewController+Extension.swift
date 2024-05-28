@@ -8,6 +8,11 @@
 import UIKit
 
 extension UIViewController {
+    func configureViewTitle(_ title: String) {
+        navigationItem.title = title
+    }
+    
+    // Alert
     func showAlert() {
         let alert = UIAlertController(
             title: nil,

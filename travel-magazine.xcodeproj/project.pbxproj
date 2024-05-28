@@ -48,7 +48,7 @@
 		C4B80BE52C03562600710EA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4B80BE82C03562600710EA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4B80BEA2C03562600710EA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C4B80BF02C03579600710EA3 /* MagazineInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagazineInfo.swift; sourceTree = SOURCE_ROOT; };
+		C4B80BF02C03579600710EA3 /* MagazineInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MagazineInfo.swift; path = Dummy/MagazineInfo.swift; sourceTree = SOURCE_ROOT; };
 		C4B80BF22C0358E100710EA3 /* TravelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTableViewCell.swift; sourceTree = "<group>"; };
 		C4B80BF42C03592500710EA3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C4B80BF72C035BA500710EA3 /* TravelTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTableViewController.swift; sourceTree = "<group>"; };
@@ -106,9 +106,20 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		C491EFF32C05E6EF00E67760 /* Dummy */ = {
+			isa = PBXGroup;
+			children = (
+				C48B9DD52C048AE700073FA5 /* Restaurant.swift */,
+				C4CAF0E02C04BEEF00CFCBAB /* TravelModel.swift */,
+				C4B80BF02C03579600710EA3 /* MagazineInfo.swift */,
+			);
+			path = Dummy;
+			sourceTree = "<group>";
+		};
 		C4B80BD02C03562500710EA3 = {
 			isa = PBXGroup;
 			children = (
+				C491EFF32C05E6EF00E67760 /* Dummy */,
 				C4B80BF42C03592500710EA3 /* README.md */,
 				C4B80BDB2C03562500710EA3 /* travel-magazine */,
 				C4B80BDA2C03562500710EA3 /* Products */,
@@ -131,10 +142,7 @@
 				C48B9DD12C048A6100073FA5 /* Controller */,
 				C4B80BDC2C03562500710EA3 /* AppDelegate.swift */,
 				C4B80BDE2C03562500710EA3 /* SceneDelegate.swift */,
-				C4B80BF02C03579600710EA3 /* MagazineInfo.swift */,
-				C48B9DD52C048AE700073FA5 /* Restaurant.swift */,
 				C4B80BE02C03562500710EA3 /* ViewController.swift */,
-				C4CAF0E02C04BEEF00CFCBAB /* TravelModel.swift */,
 				C4B80BE22C03562500710EA3 /* Main.storyboard */,
 				C4B80BE72C03562600710EA3 /* LaunchScreen.storyboard */,
 				C4B80BE52C03562600710EA3 /* Assets.xcassets */,

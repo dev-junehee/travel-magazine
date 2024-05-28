@@ -53,6 +53,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ww6-Ms-014">
                                             <rect key="frame" x="30" y="411" width="370" height="20"/>
                                             <constraints>
+                                                <constraint firstAttribute="width" constant="370" id="kAq-Ft-9qb"/>
                                                 <constraint firstAttribute="width" secondItem="Ww6-Ms-014" secondAttribute="height" multiplier="37:2" id="qTj-08-OSF"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>

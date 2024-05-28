@@ -11,6 +11,14 @@
 
 <br />
 
+## Refactor 🏭
+#### 2024-05-28 (Tue)
+- TravelTableViewCell UI/Data configure 함수 분리
+- TravelTableViewCell indentifier 타입 프로퍼티로 분리
+
+
+<br />
+
 ## 화면 구성
 | **여행 정보** | **맛집 정보** | **도시 상세** |
 |:----:|:----:|:-----:|
@@ -23,8 +31,10 @@
 <details>
 <summary><b>UILabel에서 cornerRadius 적용 안 되는 이슈</b></summary>
 <div markdown="1">
-<b>문제 상황</b><br />
+<b>문제 상황</b>
+<br />
 광고 커스텀 셀에서 background와 오른쪽 상단 광고 표시 뱃지(adBadge)에 UILable.layer.cornerRadius를 적용했는데 컴파일 과정에서 오류는 없었지만 빌드 후 화면에서는 적용이 안 되는 문제점 발생!
+<br />
 <b>해결 방법</b>
 <br />
 UILable.layer.cornerRadius를 적용하기 전 UILable.clipsToBounds 속성을 true로 변경해주어 해결
