@@ -20,7 +20,9 @@
 - TravelTableViewCell UI/Data configure 함수 분리
 - TravelTableViewCell identifier 타입 프로퍼티로 분리
 - RestaurantTableViewCell identifier 타입 프로퍼티로 분리
-- 즐겨찾기 버튼 클릭 핸들러 추가
+- 맛집/도시 탭 즐겨찾기 버튼 클릭 핸들러 추가
+    - 맛집: 새로고침 시 즐겨찾기 데이터 반영 안 되는 오류 발생
+    - 도시: 즐겨찾기 클릭 시 광고 셀 크기 변경되는 오류 발생
 
 <br />
 

@@ -10,6 +10,7 @@ import Kingfisher
 
 class CityInfoTableViewCell: UITableViewCell {
     
+    static let identifier = "CityInfoTableViewCell"
     
     @IBOutlet var placeTitle: UILabel!
     @IBOutlet var placeSubTitle: UILabel!

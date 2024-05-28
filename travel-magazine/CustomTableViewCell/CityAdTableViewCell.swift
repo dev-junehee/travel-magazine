@@ -9,6 +9,8 @@ import UIKit
 
 class CityAdTableViewCell: UITableViewCell {
     
+    static let identifier = "CityAdTableViewCell"
+    
     @IBOutlet var adTextLabel: UILabel!
     @IBOutlet var adBadgeLabel: UILabel!
 

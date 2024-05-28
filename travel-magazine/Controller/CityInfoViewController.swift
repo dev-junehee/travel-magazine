@@ -11,20 +11,23 @@ class CityInfoViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet var cityTableView: UITableView!
     
-    let cityList = TravelInfo().travel
+    var cityList = TravelInfo().travel
+    
+    let infoIdentifier = CityInfoTableViewCell.identifier
+    let adIdentifier = CityAdTableViewCell.identifier
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        navigationItem.title = "도시 상세 정보"
+        
+        configureViewTitle("도시 상세 정보")
         
         cityTableView.delegate = self
         cityTableView.dataSource = self
         
-        let infoXib = UINib(nibName: "CityInfoTableViewCell", bundle: nil)
-        let adXib = UINib(nibName: "CityAdTableViewCell", bundle: nil)
-        cityTableView.register(infoXib, forCellReuseIdentifier: "CityInfoTableViewCell")
-        cityTableView.register(adXib, forCellReuseIdentifier: "CityAdTableViewCell")
+        let infoXib = UINib(nibName: infoIdentifier, bundle: nil)
+        let adXib = UINib(nibName: adIdentifier, bundle: nil)
+        cityTableView.register(infoXib, forCellReuseIdentifier: infoIdentifier)
+        cityTableView.register(adXib, forCellReuseIdentifier: adIdentifier)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,7 +40,7 @@ class CityInfoViewController: UIViewController, UITableViewDelegate, UITableView
         // if 광고 셀인 경우
         // else 관광지 셀인 경우
         if city.ad {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CityAdTableViewCell", for: indexPath) as! CityAdTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: adIdentifier, for: indexPath) as! CityAdTableViewCell
             
             tableView.rowHeight = 100
             
@@ -46,16 +49,27 @@ class CityInfoViewController: UIViewController, UITableViewDelegate, UITableView
             
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CityInfoTableViewCell", for: indexPath) as! CityInfoTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: infoIdentifier, for: indexPath) as! CityInfoTableViewCell
             
             tableView.rowHeight = 130
             
             cell.configureCellUI()
             cell.configureCellData(data: city)
             
+            cell.likeButton.tag = indexPath.row
+            cell.likeButton.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpInside)
+            
             return cell
         }
     }
     
+    @objc func likeButtonClicked(_ sender: UIButton) {
+        guard let like = cityList[sender.tag].like else {
+            print("도시 탭 - 하트 클릭 오류")
+            return
+        }
+        cityList[sender.tag].like?.toggle()
+        cityTableView.reloadData()
+    }
     
 }
