@@ -18,7 +18,7 @@ struct Restaurant {
     let category: String
     let price: Int
     let type: Int
-    let like: Bool
+    var like: Bool
 }
 
 struct RestaurantList {

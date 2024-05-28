@@ -16,6 +16,8 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
     let restaurantList = RestaurantList().restaurantArray
     var filteredList: [Restaurant] = []
     
+    let identifier = RestaurantTableViewCell.identifier
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,8 +39,8 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
         foodTableView.dataSource = self
         
         // 재사용 커스텀 셀(XIB) Register
-        let xib = UINib(nibName: "RestaurantTableViewCell", bundle: nil)
-        foodTableView.register(xib, forCellReuseIdentifier: "RestaurantTableViewCell")
+        let xib = UINib(nibName: identifier, bundle: nil)
+        foodTableView.register(xib, forCellReuseIdentifier: identifier)
         
         // 서치바
         foodSearchBar.delegate = self
@@ -48,12 +50,20 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
         filteredList = restaurantList
     }
     
+    // 즐겨찾기 버튼 클릭 핸들러
+    @objc func likeButtonClicked(_ sender: UIButton) {
+        filteredList[sender.tag].like.toggle()
+        foodTableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .automatic)
+    }
+    
     // 상단 바 버튼 클릭 핸들러
+    // 전체보기
     @objc func allBarButtonClicked() {
         filteredList = restaurantList
         foodTableView.reloadData()
     }
     
+    // 즐겨찾기
     @objc func likeBarButtonClicked() {
         let likedList = restaurantList.filter { $0.like }
         filteredList = likedList
@@ -89,13 +99,16 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
     // 셀 데이터 & 디자인
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantTableViewCell") as! RestaurantTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as! RestaurantTableViewCell
         let restaurant = filteredList[indexPath.row]
         
         cell.configureCellUI()
         cell.configureCellData(data: restaurant)
         
+        cell.likeButton.tag = indexPath.row
+        cell.likeButton.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpInside)
+        
         return cell
     }
-    
+        
 }
