@@ -12,6 +12,7 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet var foodSearchBar: UISearchBar!
     @IBOutlet var foodTableView: UITableView!
     
+    
     let restaurantList = RestaurantList().restaurantArray
     var filteredList: [Restaurant] = []
     
@@ -32,10 +33,34 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
         
         // 서치바
         foodSearchBar.delegate = self
+        foodSearchBar.placeholder = "식당 이름을 입력해 주세용"
         
         // 첫 로드 시 전체 식당 데이터 보여주기
         filteredList = restaurantList
     }
+    
+    // 서치바 클릭 핸들러
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        var searchList: [Restaurant] = []
+        
+        guard let searchText = searchBar.text else {
+            showAlert()
+            return
+        }
+        
+        for restaurant in restaurantList {
+            if restaurant.name == searchText || restaurant.category == searchText {
+                searchList.append(restaurant)
+            }
+        }
+        
+        filteredList = searchList
+        foodTableView.reloadData()
+        searchBar.text = ""
+    }
+    
+    // 맛집 검색 필터 함수
+    
 
     // 셀 개수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

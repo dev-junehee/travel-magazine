@@ -29,6 +29,7 @@
 		C4CAF0DF2C04B8D100CFCBAB /* CityAdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CAF0DC2C04B8D100CFCBAB /* CityAdTableViewCell.swift */; };
 		C4CAF0E12C04BEEF00CFCBAB /* TravelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CAF0E02C04BEEF00CFCBAB /* TravelModel.swift */; };
 		C4CAF0E42C04C5D900CFCBAB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C4CAF0E32C04C5D900CFCBAB /* Kingfisher */; };
+		C4CAF0E82C0559EE00CFCBAB /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CAF0E72C0559EE00CFCBAB /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		C4CAF0DC2C04B8D100CFCBAB /* CityAdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityAdTableViewCell.swift; sourceTree = "<group>"; };
 		C4CAF0DD2C04B8D100CFCBAB /* CityAdTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityAdTableViewCell.xib; sourceTree = "<group>"; };
 		C4CAF0E02C04BEEF00CFCBAB /* TravelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelModel.swift; sourceTree = "<group>"; };
+		C4CAF0E72C0559EE00CFCBAB /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				C48B9DDE2C04A06E00073FA5 /* UILable+Extension.swift */,
 				C48B9DE02C04A2E600073FA5 /* UIButton+Extension.swift */,
+				C4CAF0E72C0559EE00CFCBAB /* UIViewController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4CAF0E82C0559EE00CFCBAB /* UIViewController+Extension.swift in Sources */,
 				C4B80BE12C03562500710EA3 /* ViewController.swift in Sources */,
 				C4B80BF12C03579600710EA3 /* MagazineInfo.swift in Sources */,
 				C48B9DDF2C04A06E00073FA5 /* UILable+Extension.swift in Sources */,
