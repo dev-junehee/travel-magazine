@@ -17,11 +17,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" systemColor="systemPurpleColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="hgt-ha-FS7" kind="relationship" relationship="viewControllers" id="i8q-Gs-ru3"/>
                         <segue destination="E9v-YX-Agy" kind="relationship" relationship="viewControllers" id="Zpc-71-vUq"/>
                         <segue destination="vAC-t3-Mn2" kind="relationship" relationship="viewControllers" id="13m-e5-j0b"/>
+                        <segue destination="pyJ-X8-WeS" kind="relationship" relationship="viewControllers" id="if2-99-o1I"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tOU-cK-gGH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -113,7 +115,7 @@
         <scene sceneID="twp-GD-tVX">
             <objects>
                 <navigationController id="hgt-ha-FS7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="여행" image="airplane.departure" catalog="system" id="39z-cw-tzH"/>
+                    <tabBarItem key="tabBarItem" title="여행" image="airplane" catalog="system" id="39z-cw-tzH"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q51-XX-aU2">
                         <rect key="frame" x="0.0" y="59" width="430" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -190,11 +192,11 @@
             </objects>
             <point key="canvasLocation" x="689" y="321"/>
         </scene>
-        <!--도시-->
+        <!--관광지-->
         <scene sceneID="Wfv-hz-QcE">
             <objects>
                 <navigationController id="vAC-t3-Mn2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="도시" image="number" catalog="system" id="QqH-y4-Te8"/>
+                    <tabBarItem key="tabBarItem" title="관광지" image="location.fill" catalog="system" id="QqH-y4-Te8"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MpE-b6-k3a">
                         <rect key="frame" x="0.0" y="59" width="430" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -206,6 +208,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="frF-Ny-yhj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-131" y="1058"/>
+        </scene>
+        <!--PopularCity-->
+        <scene sceneID="EfV-fg-7LY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PopularCity" id="6Tg-5D-66n" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="tNt-ft-4ay"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TQi-MV-Nn7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="538" y="1781"/>
         </scene>
         <!--도시 상세 정보-->
         <scene sceneID="ZOe-SF-CWU">
@@ -249,7 +261,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="도시 상세 정보" id="H4P-PE-pYY"/>
                     <connections>
-                        <outlet property="cityTableView" destination="JKK-aq-0JB" id="tDY-V9-xxL"/>
+                        <outlet property="travelTableView" destination="JKK-aq-0JB" id="tDY-V9-xxL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hvw-th-feC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -275,13 +287,36 @@
             </objects>
             <point key="canvasLocation" x="-130" y="322"/>
         </scene>
+        <!--인기 도시-->
+        <scene sceneID="8ZB-kS-MYE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pyJ-X8-WeS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="인기 도시" image="globe.americas.fill" catalog="system" id="LDR-VE-8Tz"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6C1-94-VdQ">
+                        <rect key="frame" x="0.0" y="59" width="430" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6Tg-5D-66n" kind="relationship" relationship="rootViewController" id="TNf-5G-8qi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="62f-0L-UfR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-131" y="1781"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="airplane.departure" catalog="system" width="128" height="84"/>
+        <image name="airplane" catalog="system" width="128" height="115"/>
         <image name="fork.knife" catalog="system" width="94" height="128"/>
-        <image name="number" catalog="system" width="128" height="123"/>
+        <image name="globe.americas.fill" catalog="system" width="128" height="123"/>
+        <image name="location.fill" catalog="system" width="128" height="119"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

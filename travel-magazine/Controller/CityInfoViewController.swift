@@ -9,9 +9,9 @@ import UIKit
 
 class CityInfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet var cityTableView: UITableView!
+    @IBOutlet var travelTableView: UITableView!
     
-    var cityList = TravelInfo().travel
+    var travelList = TravelInfo().travel
     
     let infoIdentifier = CityInfoTableViewCell.identifier
     let adIdentifier = CityAdTableViewCell.identifier
@@ -21,31 +21,31 @@ class CityInfoViewController: UIViewController, UITableViewDelegate, UITableView
         
         configureViewTitle("도시 상세 정보")
         
-        cityTableView.delegate = self
-        cityTableView.dataSource = self
+        travelTableView.delegate = self
+        travelTableView.dataSource = self
         
         let infoXib = UINib(nibName: infoIdentifier, bundle: nil)
         let adXib = UINib(nibName: adIdentifier, bundle: nil)
-        cityTableView.register(infoXib, forCellReuseIdentifier: infoIdentifier)
-        cityTableView.register(adXib, forCellReuseIdentifier: adIdentifier)
+        travelTableView.register(infoXib, forCellReuseIdentifier: infoIdentifier)
+        travelTableView.register(adXib, forCellReuseIdentifier: adIdentifier)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cityList.count
+        return travelList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let city = cityList[indexPath.row]
+        let travel = travelList[indexPath.row]
         
         // if 광고 셀인 경우
         // else 관광지 셀인 경우
-        if city.ad {
+        if travel.ad {
             let cell = tableView.dequeueReusableCell(withIdentifier: adIdentifier, for: indexPath) as! CityAdTableViewCell
             
             tableView.rowHeight = 100
             
             cell.configureCellUI()
-            cell.configureCellData(data: city)
+            cell.configureCellData(data: travel)
             cell.selectionStyle = .none
             
             return cell
@@ -55,7 +55,7 @@ class CityInfoViewController: UIViewController, UITableViewDelegate, UITableView
             tableView.rowHeight = 130
             
             cell.configureCellUI()
-            cell.configureCellData(data: city)
+            cell.configureCellData(data: travel)
             
             cell.likeButton.tag = indexPath.row
             cell.likeButton.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpInside)
@@ -65,7 +65,7 @@ class CityInfoViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let city = cityList[indexPath.row]
+        let travel = travelList[indexPath.row]
        
         let cityAdDetail = "CityAdDetail"
         let cityAdDetailVC = "CityAdDetailViewController"
@@ -73,7 +73,7 @@ class CityInfoViewController: UIViewController, UITableViewDelegate, UITableView
         let cityInfoDetail = "CityInfoDetail"
         let cityInfoDatailVC = "CityInfoDetailViewController"
         
-        if city.ad {
+        if travel.ad {
             // if 광고 셀인 경우 - present(modal) 아래에서 위로 fullScreen
             let sb = UIStoryboard(name: cityAdDetail, bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: cityAdDetailVC) as! CityAdDetailViewController
@@ -92,12 +92,12 @@ class CityInfoViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     @objc func likeButtonClicked(_ sender: UIButton) {
-        guard let like = cityList[sender.tag].like else {
+        guard let like = travelList[sender.tag].like else {
             print("도시 탭 - 하트 클릭 오류")
             return
         }
-        cityList[sender.tag].like?.toggle()
-        cityTableView.reloadData()
+        travelList[sender.tag].like?.toggle()
+        travelTableView.reloadData()
     }
     
 }

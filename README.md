@@ -12,6 +12,10 @@
 - Kingfisher 라이브러리 활용
 - DateFormetter 활용 (iOS 15이상)
 - Extension
+- Viewcontroller Transition
+    - Present - Dismiss
+    - Push - Pop
+- Protocol
 
 <br />
 
@@ -28,6 +32,9 @@
 - CityInfoTableView에서 셀 타입에 따른 다른 화면 전환 추가
     - 도시 정보 셀 클릭 시: Push
     - 광고 셀: Present (fullScreen)
+- 인기 도시 탭 구현
+    - 커스텀 셀 각 모서리마다 다른 cornerRadius 적용
+    -  
 
 <br />
 
