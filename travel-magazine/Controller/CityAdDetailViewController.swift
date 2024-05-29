@@ -15,7 +15,6 @@ class CityAdDetailViewController: UIViewController {
         setExitBarButton()
     }
     
-
     func setExitBarButton() {
         let exitImage = UIImage(systemName: "xmark")
         let exitButton = UIBarButtonItem(title: nil, image: exitImage, target: self, action: #selector(exitButtontapped))
@@ -24,7 +23,7 @@ class CityAdDetailViewController: UIViewController {
     }
     
     @objc func exitButtontapped() {
-        print("X버튼 클릭!")
+        dismiss(animated: true)
     }
 
 }
