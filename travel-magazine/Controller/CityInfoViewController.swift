@@ -46,6 +46,7 @@ class CityInfoViewController: UIViewController, UITableViewDelegate, UITableView
             
             cell.configureCellUI()
             cell.configureCellData(data: city)
+            cell.selectionStyle = .none
             
             return cell
         } else {
