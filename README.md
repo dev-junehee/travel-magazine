@@ -32,9 +32,9 @@
 - CityInfoTableView에서 셀 타입에 따른 다른 화면 전환 추가
     - 도시 정보 셀 클릭 시: Push
     - 광고 셀: Present (fullScreen)
-- 인기 도시 탭 구현
-    - 커스텀 셀 각 모서리마다 다른 cornerRadius 적용
-    -  
+- 인기 도시 탭 구현 (1차)
+    - 커스텀 셀 각 모서리마다 다른 cornerRadius 적용 (clipsToBounds, maskedCorners)
+    - 커스텀 셀 간격 조정, 그림자 효과 적용
 
 <br />
 
@@ -59,6 +59,7 @@
 </details>
 
 <br />
+
 ## Trouble Shooting 🐦‍🔥
 <details>
 <summary><b>UILabel에서 cornerRadius 적용 안 되는 이슈</b></summary>
