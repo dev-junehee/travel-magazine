@@ -46,6 +46,19 @@
 
 <br />
 
+## Questions 🧐
+<details>
+<summary><b>인기 도시 탭 - clipsToBounds를 ImageView와 ExplainLabel 두 곳에 설정해야 하는 이유</b></summary>
+<div markdown="1">
+<b>문제 상황</b>
+<br />
+
+<b>해결 방법</b>
+<br />
+</div>
+</details>
+
+<br />
 ## Trouble Shooting 🐦‍🔥
 <details>
 <summary><b>UILabel에서 cornerRadius 적용 안 되는 이슈</b></summary>
@@ -62,6 +75,7 @@ UILable.layer.cornerRadius를 적용하기 전 UILable.clipsToBounds 속성을 t
 UIView에 속해있는 인스턴스 프로퍼티로 하위 View가 나의 View를 넘어선 경우, 나의 View를 넘어서 그릴 것인지를 설정하는 Bool 인스턴스. 기본값은 false. clipsToBounds를 true로 설정하면 하위 View가 View 경계에 맞게 잘려진다.
 </div>
 </details>
+
 <details>
 <summary><b>즐겨찾기 버튼 클릭 후 식당 전체보기/즐겨찾기 보기 클릭하면 변경된 데이터가 반영 안 되는 이슈</b></summary>
 <div markdown="1">
@@ -72,3 +86,4 @@ UIView에 속해있는 인스턴스 프로퍼티로 하위 View가 나의 View�
 <br />
 </div>
 </details>
+

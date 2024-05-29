@@ -19,22 +19,22 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ptm-e3-qkm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="119"/>
+                        <rect key="frame" x="16" y="8" width="288" height="103"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Log-ju-dMx">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="119"/>
+                                <rect key="frame" x="0.0" y="0.0" width="288" height="103"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZ3-et-cTL">
-                                <rect key="frame" x="0.0" y="99" width="320" height="20"/>
+                                <rect key="frame" x="0.0" y="81" width="288" height="22"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="bvF-3k-b79"/>
+                                    <constraint firstAttribute="height" constant="22" id="bvF-3k-b79"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M34-Lp-ecH">
-                                <rect key="frame" x="270" y="8" width="42" height="30"/>
+                                <rect key="frame" x="238" y="8" width="42" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="3yb-QZ-Q0y"/>
                                 </constraints>
@@ -58,10 +58,10 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="ptm-e3-qkm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="E2q-7F-ca8"/>
-                    <constraint firstAttribute="bottom" secondItem="ptm-e3-qkm" secondAttribute="bottom" id="Npc-E6-aos"/>
-                    <constraint firstItem="ptm-e3-qkm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="bsG-Tp-u0m"/>
-                    <constraint firstAttribute="trailing" secondItem="ptm-e3-qkm" secondAttribute="trailing" id="cqR-le-fv8"/>
+                    <constraint firstItem="ptm-e3-qkm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="E2q-7F-ca8"/>
+                    <constraint firstAttribute="bottom" secondItem="ptm-e3-qkm" secondAttribute="bottom" constant="8" id="Npc-E6-aos"/>
+                    <constraint firstItem="ptm-e3-qkm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="bsG-Tp-u0m"/>
+                    <constraint firstAttribute="trailing" secondItem="ptm-e3-qkm" secondAttribute="trailing" constant="16" id="cqR-le-fv8"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
