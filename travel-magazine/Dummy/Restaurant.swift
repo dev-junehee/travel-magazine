@@ -1,14 +1,13 @@
-
 //
 //  Restaurant.swift
-//  Restaurant
+//  travel-magazine
 //
-//  Created by Den on 5/20/24.
+//  Created by junehee on 5/29/24.
 //
 
 import Foundation
 
-struct Restaurant {    
+struct Restaurant {
     let image: String
     let latitude: Double
     let longitude: Double
@@ -217,5 +216,3 @@ struct RestaurantList {
         )
     ]
 }
-
-

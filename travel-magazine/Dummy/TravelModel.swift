@@ -1,7 +1,8 @@
 //
 //  TravelModel.swift
+//  travel-magazine
 //
-//  Created by Den on 2024/05/11.
+//  Created by junehee on 5/29/24.
 //
 
 import Foundation
@@ -125,3 +126,4 @@ struct TravelInfo {
                ad: false),
     ]
 }
+
