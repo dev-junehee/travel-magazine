@@ -63,6 +63,33 @@ class CityInfoViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let city = cityList[indexPath.row]
+       
+        let cityAdDetail = "CityAdDetail"
+        let cityAdDetailVC = "CityAdDetailViewController"
+        
+        let cityInfoDetail = "CityInfoDetail"
+        let cityInfoDatailVC = "CityInfoDetailViewController"
+        
+        if city.ad {
+            // if 광고 셀인 경우 - present(modal) 아래에서 위로 fullScreen
+            let sb = UIStoryboard(name: cityAdDetail, bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: cityAdDetailVC) as! CityAdDetailViewController
+            
+            let nav = UINavigationController(rootViewController: vc)
+            nav.modalPresentationStyle = .fullScreen
+            present(nav, animated: true)
+            
+        } else {
+            // else 관광지 셀인 경우 - push(show) 옆으로 fullScreen
+            let sb = UIStoryboard(name: cityInfoDetail, bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: cityInfoDatailVC) as! CityInfoDetailViewController
+            navigationController?.pushViewController(vc, animated: true)
+        }
+            
+    }
+    
     @objc func likeButtonClicked(_ sender: UIButton) {
         guard let like = cityList[sender.tag].like else {
             print("도시 탭 - 하트 클릭 오류")
