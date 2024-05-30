@@ -33,6 +33,7 @@ class PopularCityViewController: UIViewController, UITableViewDelegate, UITableV
         
         // 테이블 뷰에서 셀과 셀 표시줄 삭제
         popularCityTableView.separatorStyle = .none
+        popularCityTableView.keyboardDismissMode = .onDrag
         
         popularCitySearchBar.delegate = self
         popularCitySearchBar.placeholder = "도시명을 검색해 보세요!"
@@ -126,5 +127,6 @@ class PopularCityViewController: UIViewController, UITableViewDelegate, UITableV
         
         return cell
     }
+    
     
 }

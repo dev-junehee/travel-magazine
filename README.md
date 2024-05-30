@@ -37,13 +37,14 @@
     - 커스텀 셀 간격 조정, 그림자 효과 적용
 
 #### 2024-05-30 (Thu)
-- CityInfoTableView 상단 SearchBar 추가
+- 인기 도시 탭 상단 SearchBar 추가
 - 인기 도시 검색 기능 추가
     - Semented Control 선택값에 따라 전체/국내/해외 필터 검색 가능
 - 검색어 및 검색 결과에 따른 예외 처리 (Alert)
     - 검색어 미입력 시
     - 공백 검색 시
     - 검색 결과 없을 시
+- 인기 도시 탭 스크롤 시 keyboardDismiss 처리
 
 <br />
 
