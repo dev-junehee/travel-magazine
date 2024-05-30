@@ -147,6 +147,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="430" height="147"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="VQD-4M-To3" kind="show" id="JsO-7B-uMW"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -173,9 +176,6 @@
                             <constraint firstItem="Ukd-BM-8uv" firstAttribute="bottom" secondItem="dlv-yb-PDz" secondAttribute="bottom" id="kZA-4b-RAM"/>
                             <constraint firstItem="B8r-1v-JER" firstAttribute="top" secondItem="Aaf-u3-Jsk" secondAttribute="top" id="wXD-Y5-st8"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="ukd-Iv-IaW" appends="YES" id="sUU-hO-hcT"/>
-                        </connections>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="맛집을 찾아요" id="aur-5s-CLC">
@@ -188,9 +188,18 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XjG-mJ-9L4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="ukd-Iv-IaW"/>
             </objects>
             <point key="canvasLocation" x="689" y="321"/>
+        </scene>
+        <!--RestaurantMap-->
+        <scene sceneID="X3Y-7D-i6A">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RestaurantMap" id="uNe-6e-9Wc" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="e4d-lm-jFf"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OIr-vz-xfl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2217" y="322"/>
         </scene>
         <!--관광지-->
         <scene sceneID="Wfv-hz-QcE">
@@ -305,6 +314,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="62f-0L-UfR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-131" y="1781"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zpJ-5y-3cf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VQD-4M-To3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="yG9-fc-I2S"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oVv-VA-PAp">
+                        <rect key="frame" x="0.0" y="59" width="430" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uNe-6e-9Wc" kind="relationship" relationship="rootViewController" id="WBh-dy-1ci"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iuB-g2-hcv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1564" y="322"/>
         </scene>
     </scenes>
     <resources>

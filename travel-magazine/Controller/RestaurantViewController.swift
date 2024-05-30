@@ -110,5 +110,16 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let data = filteredList[indexPath.row]
+        
+        let sb = UIStoryboard(name: "RestaurantMap", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "RestaurantMapViewController") as! RestaurantMapViewController
+        
+        vc.mapData = data
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
         
 }
