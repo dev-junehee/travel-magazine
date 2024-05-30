@@ -11,7 +11,7 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBOutlet var foodSearchBar: UISearchBar!
     @IBOutlet var foodTableView: UITableView!
-    
+
     
     let restaurantList = RestaurantList().restaurantArray
     var filteredList: [Restaurant] = []
