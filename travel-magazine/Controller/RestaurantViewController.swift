@@ -75,7 +75,7 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
         var searchList: [Restaurant] = []
         
         guard let searchText = searchBar.text else {
-            showAlert()
+            showAlert("검색어를 입력해 주세요!")
             return
         }
         

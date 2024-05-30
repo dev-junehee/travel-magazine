@@ -44,7 +44,6 @@ class PopularCityTableViewCell: UITableViewCell {
         
         // 이미지 뷰
         popularCityImageView.contentMode = .scaleAspectFill
-        popularCityImageView.clipsToBounds = true  // 하위 레이어 맞춰서 subView 자르기
         popularCityImageView.layer.cornerRadius = 16
         popularCityImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMaxYCorner]  // 좌측상단, 우측하단에만 radius 적용
     

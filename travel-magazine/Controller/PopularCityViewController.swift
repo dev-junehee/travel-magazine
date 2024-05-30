@@ -14,6 +14,7 @@ class PopularCityViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet var popularCityTableView: UITableView!
     
     let cityList = CityInfo().city
+    var filteredList: [City] = []
     
     let identifier = PopularCityTableViewCell.identifier
 
@@ -34,6 +35,9 @@ class PopularCityViewController: UIViewController, UITableViewDelegate, UITableV
         popularCityTableView.separatorStyle = .none
         
         popularCitySearchBar.delegate = self
+        popularCitySearchBar.placeholder = "도시명을 검색해 보세요!"
+        
+        filteredList = cityList
     }
     
     // segmented control 초기 설정
@@ -42,6 +46,7 @@ class PopularCityViewController: UIViewController, UITableViewDelegate, UITableV
         popularCitySC.setTitle("국내", forSegmentAt: 1)
         popularCitySC.setTitle("해외", forSegmentAt: 2)
         popularCitySC.addTarget(self, action: #selector(popularCitySCClicked), for: .valueChanged)
+        popularCitySC.selectedSegmentIndex = 0  // 0번째로 고정
     }
     
     // segmented control 클릭 핸들러
@@ -50,33 +55,60 @@ class PopularCityViewController: UIViewController, UITableViewDelegate, UITableV
         
         switch idx {
         case 0:
-            print("전체 선택")
+            filteredList = cityList
+            popularCityTableView.reloadData()
             break
         case 1:
-            print("국내 선택")
+            filteredList = cityList.filter { $0.domestic_travel }
+            popularCityTableView.reloadData()
             break
         case 2:
-            print("해외 선택")
+            filteredList = cityList.filter { !$0.domestic_travel }
+            popularCityTableView.reloadData()
             break
         default:
-            print("예외처리-오류!")
+            showAlert("올바른 카테고리 선택이 아닙니다.")
             break
         }
     }
     
+    // 서치 바 클릭 핸들러
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let searchText = searchBar.text!
+        let segmentIdx = popularCitySC.selectedSegmentIndex
+        
+        if searchText.isEmpty || (searchText.trimmingCharacters(in: .whitespacesAndNewlines).count == 0) {
+            showAlert("검색어를 입력해 주세요!")
+            return
+        }
+        
+        if segmentIdx == 0 {
+            filteredList = cityList.filter { $0.city_name.contains(searchText) || $0.city_explain.contains(searchText)}
+        } else if segmentIdx == 1 {
+            filteredList = cityList.filter { $0.domestic_travel && $0.city_name.contains(searchText) }
+        } else if segmentIdx == 2 {
+            filteredList = cityList.filter { !$0.domestic_travel && $0.city_name.contains(searchText) }
+        } else {
+            showAlert("올바른 검색어를 입력해 주세요!")
+        }
+        popularCityTableView.reloadData()
         view.endEditing(true)
+    }
+    
+    // 검색 후 서치 바 다시 누를 때 기존 검색어 초기화
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.text = ""
     }
     
     // 섹션 수 설정
     func numberOfSections(in tableView: UITableView) -> Int {
-        return cityList.count
+        if filteredList.count == 0 {
+            showAlert("검색 결과가 존재하지 않아요😿")
+            return 0
+        }
+        return filteredList.count
     }
     
-//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//        return 100
-//    }
-//    
     // 셀 개수 설정
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -84,7 +116,7 @@ class PopularCityViewController: UIViewController, UITableViewDelegate, UITableV
     
     // 셀 구성
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let city = cityList[indexPath.section]
+        let city = filteredList[indexPath.section]
         
         let cell = popularCityTableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! PopularCityTableViewCell
         
@@ -94,6 +126,5 @@ class PopularCityViewController: UIViewController, UITableViewDelegate, UITableV
         
         return cell
     }
-    
     
 }

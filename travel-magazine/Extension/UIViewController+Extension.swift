@@ -14,13 +14,13 @@ extension UIViewController {
     }
     
     // Alert
-    func showAlert() {
+    func showAlert(_ titleMSG: String) {
         let alert = UIAlertController(
-            title: nil,
+            title: titleMSG,
             message: nil,
             preferredStyle: .alert)
         
-        let warning = UIAlertAction(title: "검색어를 입력해 주세요!", style: .default)
+        let warning = UIAlertAction(title: "확인", style: .default)
         
         alert.addAction(warning)
         
@@ -28,3 +28,6 @@ extension UIViewController {
         present(alert, animated: true)
     }
 }
+
+
+
