@@ -8,11 +8,32 @@
 import UIKit
 
 class CityAdDetailViewController: UIViewController {
-
+    
+    var titleData: String?
+    
+    @IBOutlet var detailAdView: UIView!
+    @IBOutlet var detailAdLabel: UILabel!
+    @IBOutlet var detailAdImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureViewTitle("광고 화면")
+        configureViewTitle("광고")
         setExitBarButton()
+        
+        guard let titleData = titleData else { return }
+        setTravelAdDetail(title: titleData)
+    }
+    
+    func setTravelAdDetail(title: String) {
+        detailAdView.backgroundColor = .systemGray6
+        
+        detailAdLabel.text = title
+        detailAdLabel.textAlignment = .center
+        detailAdLabel.numberOfLines = 0
+        detailAdLabel.font = .boldSystemFont(ofSize: 24)
+        
+        detailAdImageView.image = UIImage(systemName: "heart.fill")
+        detailAdImageView.tintColor = .systemPink
     }
     
     func setExitBarButton() {
@@ -25,5 +46,7 @@ class CityAdDetailViewController: UIViewController {
     @objc func exitButtontapped() {
         dismiss(animated: true)
     }
+    
+    
 
 }

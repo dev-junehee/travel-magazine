@@ -6,13 +6,45 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CityInfoDetailViewController: UIViewController {
-
+    
+    var detailData: Travel?
+    
+    @IBOutlet var detailImageView: UIImageView!
+    @IBOutlet var detailDescriptionLabel: UILabel!
+    @IBOutlet var detailGradeLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureViewTitle("관광지 화면")
         setPopBarButton()
+        
+        guard let detailData = detailData else {
+            showAlert("데이터가 올바르지 않아요!")
+            return
+        }
+        setTravelInfoDetail(data: detailData)
+    }
+    
+    
+    func setTravelInfoDetail(data: Travel) {
+        configureViewTitle(data.title)
+        
+        // 이미지
+        let imageURL = URL(string: data.travel_image!)
+        let placeholder = UIImage(systemName: "arrow.down.circle.dotted")
+        detailImageView.kf.setImage(with: imageURL, placeholder: placeholder)
+        detailImageView.contentMode = .scaleAspectFill
+        detailImageView.layer.cornerRadius = 10
+        // 설명
+        detailDescriptionLabel.text = " \(data.description!) "
+        detailDescriptionLabel.textAlignment = .center
+        detailDescriptionLabel.font = .boldSystemFont(ofSize: 18)
+        // 별점
+        detailGradeLabel.text = convertGradeToStar(grade: data.grade!)
+        detailGradeLabel.textAlignment = .center
+        detailGradeLabel.font = .systemFont(ofSize: 30)
     }
 
     func setPopBarButton() {
@@ -24,5 +56,13 @@ class CityInfoDetailViewController: UIViewController {
     
     @objc func popBarButtonClicked() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    // 별점 출력 로직 수정하기!
+    func convertGradeToStar(grade: Double) -> String {
+        let intGrade = Int(grade)
+        let stars = ["⭐️", "⭐️⭐️", "⭐️⭐️⭐️","⭐️⭐️⭐️⭐️","⭐️⭐️⭐️⭐️⭐️",]
+        
+        return stars[intGrade - 1]
     }
 }

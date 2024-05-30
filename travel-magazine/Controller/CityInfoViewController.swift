@@ -24,6 +24,8 @@ class CityInfoViewController: UIViewController, UITableViewDelegate, UITableView
         travelTableView.delegate = self
         travelTableView.dataSource = self
         
+        travelTableView.rowHeight = 120
+        
         let infoXib = UINib(nibName: infoIdentifier, bundle: nil)
         let adXib = UINib(nibName: adIdentifier, bundle: nil)
         travelTableView.register(infoXib, forCellReuseIdentifier: infoIdentifier)
@@ -42,8 +44,6 @@ class CityInfoViewController: UIViewController, UITableViewDelegate, UITableView
         if travel.ad {
             let cell = tableView.dequeueReusableCell(withIdentifier: adIdentifier, for: indexPath) as! CityAdTableViewCell
             
-            tableView.rowHeight = 100
-            
             cell.configureCellUI()
             cell.configureCellData(data: travel)
             cell.selectionStyle = .none
@@ -52,11 +52,9 @@ class CityInfoViewController: UIViewController, UITableViewDelegate, UITableView
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: infoIdentifier, for: indexPath) as! CityInfoTableViewCell
             
-            tableView.rowHeight = 130
-            
             cell.configureCellUI()
             cell.configureCellData(data: travel)
-            
+ 
             cell.likeButton.tag = indexPath.row
             cell.likeButton.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpInside)
             
@@ -77,6 +75,8 @@ class CityInfoViewController: UIViewController, UITableViewDelegate, UITableView
             // if 광고 셀인 경우 - present(modal) 아래에서 위로 fullScreen
             let sb = UIStoryboard(name: cityAdDetail, bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: cityAdDetailVC) as! CityAdDetailViewController
+
+            vc.titleData = travel.title  // 광고 텍스트만 전달
             
             let nav = UINavigationController(rootViewController: vc)
             nav.modalPresentationStyle = .fullScreen
@@ -86,18 +86,18 @@ class CityInfoViewController: UIViewController, UITableViewDelegate, UITableView
             // else 관광지 셀인 경우 - push(show) 옆으로 fullScreen
             let sb = UIStoryboard(name: cityInfoDetail, bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: cityInfoDatailVC) as! CityInfoDetailViewController
+            
+            vc.detailData = travel  // 데이터 전체 전달
+            
             navigationController?.pushViewController(vc, animated: true)
         }
             
     }
     
     @objc func likeButtonClicked(_ sender: UIButton) {
-        guard let like = travelList[sender.tag].like else {
-            print("도시 탭 - 하트 클릭 오류")
-            return
-        }
-        travelList[sender.tag].like?.toggle()
-        travelTableView.reloadData()
+        let idx = sender.tag
+        travelList[idx].like?.toggle()
+        travelTableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .automatic)
     }
     
 }

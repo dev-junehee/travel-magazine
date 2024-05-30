@@ -16,10 +16,52 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zra-9n-72p">
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZC-Lp-pjC">
+                                        <rect key="frame" x="48" y="160" width="297" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="qJs-MM-WoG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cbq-og-dS4">
+                                        <rect key="frame" x="46.666666666666657" y="284" width="300" height="300"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="14d-EF-pAQ"/>
+                                            <constraint firstAttribute="width" secondItem="cbq-og-dS4" secondAttribute="height" multiplier="1:1" id="jgR-by-YVY"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="hZC-Lp-pjC" firstAttribute="leading" secondItem="Zra-9n-72p" secondAttribute="leading" constant="48" id="BnJ-T9-KjJ"/>
+                                    <constraint firstItem="cbq-og-dS4" firstAttribute="top" secondItem="hZC-Lp-pjC" secondAttribute="bottom" constant="24" id="MmU-bz-rKh"/>
+                                    <constraint firstItem="cbq-og-dS4" firstAttribute="centerX" secondItem="Zra-9n-72p" secondAttribute="centerX" id="NzW-EH-agG"/>
+                                    <constraint firstAttribute="trailing" secondItem="hZC-Lp-pjC" secondAttribute="trailing" constant="48" id="Q2K-Eg-75a"/>
+                                    <constraint firstItem="hZC-Lp-pjC" firstAttribute="top" secondItem="Zra-9n-72p" secondAttribute="top" constant="160" id="UtE-H5-p4j"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Zra-9n-72p" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="J4H-Co-pEi"/>
+                            <constraint firstItem="Zra-9n-72p" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="a2c-s7-XBf"/>
+                            <constraint firstItem="Zra-9n-72p" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ud7-p1-2y5"/>
+                            <constraint firstAttribute="bottom" secondItem="Zra-9n-72p" secondAttribute="bottom" id="y8C-ex-Eef"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="present" id="Uyg-NF-DfJ"/>
+                    <connections>
+                        <outlet property="detailAdImageView" destination="cbq-og-dS4" id="hMI-A0-4cH"/>
+                        <outlet property="detailAdLabel" destination="hZC-Lp-pjC" id="oUp-6f-vHk"/>
+                        <outlet property="detailAdView" destination="Zra-9n-72p" id="DQt-BF-0mg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
