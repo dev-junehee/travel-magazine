@@ -7,8 +7,9 @@
 
 import UIKit
 
-class PopularCityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PopularCityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
+    @IBOutlet var popularCitySearchBar: UISearchBar!
     @IBOutlet var popularCitySC: UISegmentedControl!
     @IBOutlet var popularCityTableView: UITableView!
     
@@ -31,6 +32,8 @@ class PopularCityViewController: UIViewController, UITableViewDelegate, UITableV
         
         // 테이블 뷰에서 셀과 셀 표시줄 삭제
         popularCityTableView.separatorStyle = .none
+        
+        popularCitySearchBar.delegate = self
     }
     
     // segmented control 초기 설정
@@ -61,6 +64,10 @@ class PopularCityViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+    }
+    
     // 섹션 수 설정
     func numberOfSections(in tableView: UITableView) -> Int {
         return cityList.count
@@ -83,6 +90,7 @@ class PopularCityViewController: UIViewController, UITableViewDelegate, UITableV
         
         cell.configureCellUI()
         cell.configureCellData(data: city)
+        cell.selectionStyle = .none
         
         return cell
     }

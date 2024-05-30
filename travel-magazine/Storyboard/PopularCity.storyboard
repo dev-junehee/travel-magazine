@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KSL-iu-MWQ">
-                                <rect key="frame" x="16" y="67" width="361" height="31"/>
+                                <rect key="frame" x="16" y="131" width="361" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Dmn-Xb-pf9"/>
                                 </constraints>
@@ -28,24 +28,38 @@
                                 </segments>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="lWP-Il-Uid">
-                                <rect key="frame" x="0.0" y="113" width="393" height="705"/>
+                                <rect key="frame" x="0.0" y="177" width="393" height="641"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="H8q-N6-n25">
+                                <rect key="frame" x="0.0" y="59" width="393" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="kGR-nC-wZo"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="pkD-HZ-nA8"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="KSL-iu-MWQ" secondAttribute="trailing" constant="16" id="2vT-2T-ChQ"/>
+                            <constraint firstAttribute="trailing" secondItem="H8q-N6-n25" secondAttribute="trailing" id="4EJ-X5-zuR"/>
+                            <constraint firstItem="KSL-iu-MWQ" firstAttribute="top" secondItem="H8q-N6-n25" secondAttribute="bottom" constant="16" id="7uW-uQ-tXb"/>
                             <constraint firstItem="KSL-iu-MWQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Eue-j1-ZCV"/>
                             <constraint firstItem="lWP-Il-Uid" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="IGX-Og-8GI"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="lWP-Il-Uid" secondAttribute="trailing" id="hcD-xa-gtr"/>
                             <constraint firstItem="lWP-Il-Uid" firstAttribute="top" secondItem="KSL-iu-MWQ" secondAttribute="bottom" constant="16" id="iDt-Fx-c9m"/>
+                            <constraint firstItem="H8q-N6-n25" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="jes-Rg-eN7"/>
+                            <constraint firstItem="H8q-N6-n25" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="vT6-zC-nvJ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="lWP-Il-Uid" secondAttribute="bottom" id="vlc-4R-xns"/>
-                            <constraint firstItem="KSL-iu-MWQ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="8" id="x43-xN-Juu"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="popularCitySC" destination="KSL-iu-MWQ" id="lgX-sY-gMa"/>
+                        <outlet property="popularCitySearchBar" destination="H8q-N6-n25" id="6Zd-ne-DyR"/>
                         <outlet property="popularCityTableView" destination="lWP-Il-Uid" id="KqY-a0-n9W"/>
                     </connections>
                 </viewController>
