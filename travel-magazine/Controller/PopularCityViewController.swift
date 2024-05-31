@@ -7,24 +7,34 @@
 
 import UIKit
 
-class PopularCityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class PopularCityViewController: UIViewController, UISearchBarDelegate {
     
     @IBOutlet var popularCitySearchBar: UISearchBar!
     @IBOutlet var popularCitySC: UISegmentedControl!
     @IBOutlet var popularCityTableView: UITableView!
     
     let cityList = CityInfo().city
-    var filteredList: [City] = []
+    var filteredList: [City] = [] {
+        didSet {
+            popularCityTableView.reloadData()
+        }
+    }
     
     let identifier = PopularCityTableViewCell.identifier
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewTitle("인기 도시")
+        
+        configurePopularCitySearchBar()
+        configurePopularCityTableView()
         configureSegmentedControl()
-        
-        popularCityTableView.rowHeight = 140
-        
+
+        filteredList = cityList
+    }
+    
+    // TableView 초기 설정
+    func configurePopularCityTableView() {
         popularCityTableView.delegate = self
         popularCityTableView.dataSource = self
         
@@ -35,13 +45,16 @@ class PopularCityViewController: UIViewController, UITableViewDelegate, UITableV
         popularCityTableView.separatorStyle = .none
         popularCityTableView.keyboardDismissMode = .onDrag
         
-        popularCitySearchBar.delegate = self
-        popularCitySearchBar.placeholder = "도시명을 검색해 보세요!"
-        
-        filteredList = cityList
+        popularCityTableView.rowHeight = 140
     }
     
-    // segmented control 초기 설정
+    // SearchBar 초기 설정
+    func configurePopularCitySearchBar() {
+        popularCitySearchBar.delegate = self
+        popularCitySearchBar.placeholder = "도시명을 검색해 보세요!"
+    }
+    
+    // Segmented Control 초기 설정
     func configureSegmentedControl() {
         popularCitySC.insertSegment(withTitle: "전체", at: 0, animated: true)
         popularCitySC.setTitle("국내", forSegmentAt: 1)
@@ -50,22 +63,19 @@ class PopularCityViewController: UIViewController, UITableViewDelegate, UITableV
         popularCitySC.selectedSegmentIndex = 0  // 0번째로 고정
     }
     
-    // segmented control 클릭 핸들러
+    // Segmented Control 클릭 핸들러
     @objc func popularCitySCClicked(_ sender: UISegmentedControl) {
         let idx = sender.selectedSegmentIndex
         
         switch idx {
         case 0:
             filteredList = cityList
-            popularCityTableView.reloadData()
             break
         case 1:
             filteredList = cityList.filter { $0.domestic_travel }
-            popularCityTableView.reloadData()
             break
         case 2:
             filteredList = cityList.filter { !$0.domestic_travel }
-            popularCityTableView.reloadData()
             break
         default:
             showAlert("올바른 카테고리 선택이 아닙니다.")
@@ -73,7 +83,7 @@ class PopularCityViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
-    // 서치 바 클릭 핸들러
+    // SearchBar 클릭 핸들러
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let searchText = searchBar.text!
         let segmentIdx = popularCitySC.selectedSegmentIndex
@@ -92,7 +102,6 @@ class PopularCityViewController: UIViewController, UITableViewDelegate, UITableV
         } else {
             showAlert("올바른 검색어를 입력해 주세요!")
         }
-        popularCityTableView.reloadData()
         view.endEditing(true)
     }
     
@@ -100,7 +109,10 @@ class PopularCityViewController: UIViewController, UITableViewDelegate, UITableV
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.text = ""
     }
-    
+}
+
+
+extension PopularCityViewController: UITableViewDelegate, UITableViewDataSource {
     // 섹션 수 설정
     func numberOfSections(in tableView: UITableView) -> Int {
         if filteredList.count == 0 {
@@ -127,6 +139,4 @@ class PopularCityViewController: UIViewController, UITableViewDelegate, UITableV
         
         return cell
     }
-    
-    
 }

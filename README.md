@@ -58,9 +58,13 @@
 - 맛집 탭
     - RestaurantVC + Extension 분리 (SearchBar, TableView)
     - SearchBar, TableView configure 함수 분리
+    - Property Observer 추가
     - BarButton 생성 함수 분리
     - 즐겨찾기 버튼 클릭 시 Alert 추가
-
+- 인기 도시 탭
+    - PopularCityVC + Extension 분리 (SearchBar, TableView, Segmented Control)
+    - SearchBar, TableView, Segmented Control configure 함수 분리
+    - Property Observer 추가
 
 <br />
 
