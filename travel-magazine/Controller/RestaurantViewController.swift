@@ -13,7 +13,7 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet var foodTableView: UITableView!
 
     
-    let restaurantList = RestaurantList().restaurantArray
+    var restaurantList = RestaurantList().restaurantArray
     var filteredList: [Restaurant] = []
     
     let identifier = RestaurantTableViewCell.identifier
@@ -53,6 +53,13 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
     // 즐겨찾기 버튼 클릭 핸들러
     @objc func likeButtonClicked(_ sender: UIButton) {
         filteredList[sender.tag].like.toggle()
+        
+        for i in 0..<restaurantList.count {
+            if restaurantList[i].name == filteredList[sender.tag].name {
+                restaurantList[i].like.toggle()
+            }
+        }
+        
         foodTableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .automatic)
     }
     
@@ -63,9 +70,9 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
         foodTableView.reloadData()
     }
     
-    // 즐겨찾기
+    // 즐겨찾기 필터
     @objc func likeBarButtonClicked() {
-        let likedList = restaurantList.filter { $0.like }
+        let likedList = filteredList.filter { $0.like }
         filteredList = likedList
         foodTableView.reloadData()
     }
