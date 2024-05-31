@@ -11,7 +11,7 @@ class UserDefaultsManager {
     // 맛집 탭
     var restaurantList: [Restaurant] {
         get {
-            return UserDefaults.standard.array(forKey: "restaurant") as? [Restaurant] ?? [Restaurant]()
+            return UserDefaults.standard.array(forKey: "restaurant") as! [Restaurant]
         }
         
         set {

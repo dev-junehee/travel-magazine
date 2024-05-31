@@ -11,9 +11,17 @@ class RestaurantViewController: UIViewController {
     
     let identifier = RestaurantTableViewCell.identifier
     
-    var originalRestaurantList: [Restaurant] = RestaurantList().restaurantArray
+    var originalRestaurantList: [Restaurant] = [] {
+        didSet {
+            RestaurantTableView.reloadData()
+        }
+    }
     
-    var filteredRestaurantList: [Restaurant] = []
+    var filteredRestaurantList: [Restaurant] = [] {
+        didSet {
+            RestaurantTableView.reloadData()
+        }
+    }
     
     @IBOutlet var RestaurantSearchBar: UISearchBar!
     @IBOutlet var RestaurantTableView: UITableView!
@@ -37,14 +45,16 @@ class RestaurantViewController: UIViewController {
         let xib = UINib(nibName: identifier, bundle: nil)
         RestaurantTableView.register(xib, forCellReuseIdentifier: identifier)
         
+        originalRestaurantList = RestaurantList().restaurantArray
         filteredRestaurantList = originalRestaurantList
+        
         RestaurantTableView.rowHeight = 130
     }
     
     // SearchBar 초기 설정
     func configureRestaurantSearchBar() {
         RestaurantSearchBar.delegate = self
-        RestaurantSearchBar.placeholder = "식당 이름이나 카테고리를 검색해 보세요!"
+        RestaurantSearchBar.placeholder = "맛집 이름이나 카테고리를 검색해 보세요!"
     }
     
     // MARK: 핸들러
@@ -65,14 +75,12 @@ class RestaurantViewController: UIViewController {
     // 전체보기
     @objc func allBarButtonClicked() {
         filteredRestaurantList = originalRestaurantList
-        RestaurantTableView.reloadData()
     }
     
     // 즐겨찾기
     @objc func likeBarButtonClicked() {
         let likedList = filteredRestaurantList.filter { $0.like }
         filteredRestaurantList = likedList
-        RestaurantTableView.reloadData()
     }
 }
 
@@ -80,7 +88,6 @@ class RestaurantViewController: UIViewController {
 // MARK: Extension
 // SearchBar Extension
 extension RestaurantViewController: UISearchBarDelegate {
-    // 서치바 클릭 핸들러
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         var searchList: [Restaurant] = []
         
@@ -89,14 +96,23 @@ extension RestaurantViewController: UISearchBarDelegate {
             return
         }
         
+        if searchText.trimmingCharacters(in: .whitespacesAndNewlines).count == 0 {
+            showAlert("1글자 이상의 검색어를 입력해 주세요!")
+            return
+        }
+        
         for restaurant in originalRestaurantList {
-            if restaurant.name == searchText || restaurant.category == searchText {
+            if restaurant.name.contains(searchText) || restaurant.category.contains(searchText) {
                 searchList.append(restaurant)
             }
         }
         
+        if searchList.isEmpty {
+            showAlert("찾고있는 맛집이 없어요😰")
+            return
+        }
+        
         filteredRestaurantList = searchList
-        RestaurantTableView.reloadData()
         view.endEditing(true)
         searchBar.text = ""
     }

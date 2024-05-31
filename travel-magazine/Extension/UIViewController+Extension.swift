@@ -18,6 +18,8 @@ extension UIViewController {
     func configureBarButton(title: String?, style: UIBarButtonItem.Style, target: Any?, action: Selector?, direction: Bool) {
         let barButton = UIBarButtonItem(title: title, style: style, target: target, action: action)
         
+        barButton.tintColor = Colors.barButton
+        
         if direction {
             navigationItem.leftBarButtonItem = barButton
         } else {
@@ -33,10 +35,7 @@ extension UIViewController {
             preferredStyle: .alert)
         
         let warning = UIAlertAction(title: "확인", style: .default)
-        
         alert.addAction(warning)
-        
-        // 4.화면에 띄우기
         present(alert, animated: true)
     }
 }
