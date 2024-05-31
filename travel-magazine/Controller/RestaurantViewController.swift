@@ -7,76 +7,79 @@
 
 import UIKit
 
-class RestaurantViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
-    
-    @IBOutlet var foodSearchBar: UISearchBar!
-    @IBOutlet var foodTableView: UITableView!
-
-    
-    var restaurantList = RestaurantList().restaurantArray
-    var filteredList: [Restaurant] = []
+class RestaurantViewController: UIViewController {
     
     let identifier = RestaurantTableViewCell.identifier
     
+    var originalRestaurantList: [Restaurant] = RestaurantList().restaurantArray
+    
+    var filteredRestaurantList: [Restaurant] = []
+    
+    @IBOutlet var RestaurantSearchBar: UISearchBar!
+    @IBOutlet var RestaurantTableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureViewTitle("맛집을 찾아요🍕")
-        
-        let all = UIBarButtonItem(title: "전체", style: .plain, target: self, action: #selector(allBarButtonClicked))
-        let like = UIBarButtonItem(title: "즐겨찾기", style: .plain, target: self, action: #selector(likeBarButtonClicked))
-        
-        navigationItem.leftBarButtonItem = all
-        navigationItem.rightBarButtonItem = like
-        
-        all.tintColor = .systemGray
-        like.tintColor = .systemGray
-        
-        // 테이블뷰 셀 height 크기
-        foodTableView.rowHeight = 130
-        
-        foodTableView.delegate = self
-        foodTableView.dataSource = self
-        
-        // 재사용 커스텀 셀(XIB) Register
-        let xib = UINib(nibName: identifier, bundle: nil)
-        foodTableView.register(xib, forCellReuseIdentifier: identifier)
-        
-        // 서치바
-        foodSearchBar.delegate = self
-        foodSearchBar.placeholder = "식당 이름이나 카테고리를 검색해 보세요!"
-        
-        // 첫 로드 시 전체 식당 데이터 보여주기
-        filteredList = restaurantList
+        configureRestaurantTableView()
+        configureRestaurantSearchBar()
+        configureBarButton(title: "전체", style: .plain, target: self, action: #selector(allBarButtonClicked), direction: true)
+        configureBarButton(title: "즐겨찾기", style: .plain, target: self, action: #selector(likeBarButtonClicked), direction: false)
     }
     
-    // 즐겨찾기 버튼 클릭 핸들러
-    @objc func likeButtonClicked(_ sender: UIButton) {
-        filteredList[sender.tag].like.toggle()
+    // MARK: 초기 설정 함수
+    // TableView 초기 설정
+    func configureRestaurantTableView() {
+        RestaurantTableView.delegate = self
+        RestaurantTableView.dataSource = self
         
-        for i in 0..<restaurantList.count {
-            if restaurantList[i].name == filteredList[sender.tag].name {
-                restaurantList[i].like.toggle()
+        let xib = UINib(nibName: identifier, bundle: nil)
+        RestaurantTableView.register(xib, forCellReuseIdentifier: identifier)
+        
+        filteredRestaurantList = originalRestaurantList
+        RestaurantTableView.rowHeight = 130
+    }
+    
+    // SearchBar 초기 설정
+    func configureRestaurantSearchBar() {
+        RestaurantSearchBar.delegate = self
+        RestaurantSearchBar.placeholder = "식당 이름이나 카테고리를 검색해 보세요!"
+    }
+    
+    // MARK: 핸들러
+    // TableView Cell - 즐겨찾기 버튼 클릭 핸들러
+    @objc func likeButtonClicked(_ sender: UIButton) {
+        filteredRestaurantList[sender.tag].like.toggle()
+        
+        for i in 0..<originalRestaurantList.count {
+            if originalRestaurantList[i].name == filteredRestaurantList[sender.tag].name {
+                originalRestaurantList[i].like.toggle()
             }
         }
         
-        foodTableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .automatic)
+        RestaurantTableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .automatic)
     }
     
-    // 상단 바 버튼 클릭 핸들러
+    // BarButton - 필터링 버튼 클릭 핸들러
     // 전체보기
     @objc func allBarButtonClicked() {
-        filteredList = restaurantList
-        foodTableView.reloadData()
+        filteredRestaurantList = originalRestaurantList
+        RestaurantTableView.reloadData()
     }
     
-    // 즐겨찾기 필터
+    // 즐겨찾기
     @objc func likeBarButtonClicked() {
-        let likedList = filteredList.filter { $0.like }
-        filteredList = likedList
-        foodTableView.reloadData()
+        let likedList = filteredRestaurantList.filter { $0.like }
+        filteredRestaurantList = likedList
+        RestaurantTableView.reloadData()
     }
-    
+}
+
+
+// MARK: Extension
+// SearchBar Extension
+extension RestaurantViewController: UISearchBarDelegate {
     // 서치바 클릭 핸들러
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         var searchList: [Restaurant] = []
@@ -86,28 +89,31 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
             return
         }
         
-        for restaurant in restaurantList {
+        for restaurant in originalRestaurantList {
             if restaurant.name == searchText || restaurant.category == searchText {
                 searchList.append(restaurant)
             }
         }
         
-        filteredList = searchList
-        foodTableView.reloadData()
+        filteredRestaurantList = searchList
+        RestaurantTableView.reloadData()
         view.endEditing(true)
         searchBar.text = ""
     }
+}
 
+// TableView Extension
+extension RestaurantViewController: UITableViewDelegate, UITableViewDataSource {
     // 셀 개수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredList.count
+        return filteredRestaurantList.count
     }
     
     // 셀 데이터 & 디자인
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as! RestaurantTableViewCell
-        let restaurant = filteredList[indexPath.row]
+        let restaurant = filteredRestaurantList[indexPath.row]
         
         cell.configureCellUI()
         cell.configureCellData(data: restaurant)
@@ -119,7 +125,7 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let data = filteredList[indexPath.row]
+        let data = filteredRestaurantList[indexPath.row]
         
         let sb = UIStoryboard(name: "RestaurantMap", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "RestaurantMapViewController") as! RestaurantMapViewController
@@ -128,5 +134,4 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
         
         navigationController?.pushViewController(vc, animated: true)
     }
-        
 }

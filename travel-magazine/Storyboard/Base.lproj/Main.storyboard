@@ -183,8 +183,8 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="foodSearchBar" destination="B8r-1v-JER" id="q8f-Ma-tuN"/>
-                        <outlet property="foodTableView" destination="Ukd-BM-8uv" id="B7D-A8-Pvm"/>
+                        <outlet property="RestaurantSearchBar" destination="B8r-1v-JER" id="q8f-Ma-tuN"/>
+                        <outlet property="RestaurantTableView" destination="Ukd-BM-8uv" id="B7D-A8-Pvm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XjG-mJ-9L4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

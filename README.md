@@ -51,6 +51,13 @@
     - 화면 전환 시 데이터 전달 처리
 - 맛집 탭
     - 셀 클릭 시 식당 세부 정보 및 지도 위치 제공 기능 추가
+    
+#### 2024-05-31 (Fri)
+- 맛집 탭
+    - RestaurantVC + Extension 분리 (SearchBar, TableView)
+    - SearchBar, TableView configure 함수 분리
+    - BarButton 생성 함수 분리
+
 
 <br />
 

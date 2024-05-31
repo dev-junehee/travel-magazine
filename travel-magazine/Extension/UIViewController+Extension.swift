@@ -8,12 +8,24 @@
 import UIKit
 
 extension UIViewController {
+    // MARK: Navigation 네비게이션
     // 네비게이션 아이템 타이틀 설정
     func configureViewTitle(_ title: String) {
         navigationItem.title = title
     }
     
-    // Alert
+    // 네비게이션 아이템 BarButton 설정
+    func configureBarButton(title: String?, style: UIBarButtonItem.Style, target: Any?, action: Selector?, direction: Bool) {
+        let barButton = UIBarButtonItem(title: title, style: style, target: target, action: action)
+        
+        if direction {
+            navigationItem.leftBarButtonItem = barButton
+        } else {
+            navigationItem.rightBarButtonItem = barButton
+        }
+    }
+    
+    // MARK: Alert 얼럿
     func showAlert(_ titleMSG: String) {
         let alert = UIAlertController(
             title: titleMSG,
