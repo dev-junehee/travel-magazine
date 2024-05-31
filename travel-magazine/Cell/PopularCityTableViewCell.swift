@@ -10,8 +10,6 @@ import Kingfisher
 
 class PopularCityTableViewCell: UITableViewCell {
     
-    static let identifier = "PopularCityTableViewCell"
-    
     @IBOutlet var popularCityBackView: UIView!
     @IBOutlet var popularCityImageView: UIImageView!
     
@@ -71,5 +69,11 @@ class PopularCityTableViewCell: UITableViewCell {
         // 도시 이름/설명
         popularCityNameLabel.text = "\(data.city_name) | \(data.city_english_name)"
         popularCityExplainLabel.text = "  " + data.city_explain
+    }
+}
+
+extension PopularCityTableViewCell: ReuseIdentifierProtocol {
+    static var identifier: String {
+        return String(describing: self)
     }
 }

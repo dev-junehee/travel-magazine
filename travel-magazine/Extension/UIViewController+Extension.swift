@@ -7,7 +7,12 @@
 
 import UIKit
 
-extension UIViewController {
+extension UIViewController: ReuseIdentifierProtocol {
+    // MARK: 연산 프로퍼티로 identifier 사용
+    static var identifier: String {
+        return String(describing: self)
+    }
+    
     // MARK: Navigation 네비게이션
     // 네비게이션 아이템 타이틀 설정
     func configureViewTitle(_ title: String) {
@@ -39,6 +44,3 @@ extension UIViewController {
         present(alert, animated: true)
     }
 }
-
-
-

@@ -9,9 +9,7 @@ import UIKit
 import Kingfisher
 
 class CityInfoTableViewCell: UITableViewCell {
-    
-    static let identifier = "CityInfoTableViewCell"
-    
+ 
     @IBOutlet var placeTitle: UILabel!
     @IBOutlet var placeSubTitle: UILabel!
     @IBOutlet var placeRateLabel: UILabel!
@@ -56,7 +54,10 @@ class CityInfoTableViewCell: UITableViewCell {
         likeButton.setImage(heart, for: .normal)
         likeButton.backgroundColor = .clear
     }
-    
-    
-    
+}
+
+extension CityInfoTableViewCell: ReuseIdentifierProtocol {
+    static var identifier: String {
+        return String(describing: self)
+    }
 }

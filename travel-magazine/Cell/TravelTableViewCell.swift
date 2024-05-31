@@ -8,8 +8,6 @@
 import UIKit
 
 class TravelTableViewCell: UITableViewCell {
-    
-    static let identifier = "TravelCell"
 
     @IBOutlet var mainImage: UIImageView!
     @IBOutlet var mainTitle: UILabel!
@@ -63,5 +61,12 @@ class TravelTableViewCell: UITableViewCell {
         let formattedString = dateFormatter.string(from: date)
         return formattedString
     }
+}
+
+extension TravelTableViewCell: ReuseIdentifierProtocol {
+    static var identifier: String {
+        return String(describing: self)  // self는 클래스의 인스턴스를 의미
+    }
+    
 }
 

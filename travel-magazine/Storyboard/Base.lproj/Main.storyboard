@@ -39,7 +39,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TravelCell" rowHeight="520" id="7Cv-G3-0pS" customClass="TravelTableViewCell" customModule="travel_magazine" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TravelTableViewCell" rowHeight="520" id="7Cv-G3-0pS" customClass="TravelTableViewCell" customModule="travel_magazine" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="430" height="520"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7Cv-G3-0pS" id="S5Y-iz-938">
@@ -201,11 +201,11 @@
             </objects>
             <point key="canvasLocation" x="2217" y="322"/>
         </scene>
-        <!--관광지-->
+        <!--도시-->
         <scene sceneID="Wfv-hz-QcE">
             <objects>
                 <navigationController id="vAC-t3-Mn2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="관광지" image="location.fill" catalog="system" id="QqH-y4-Te8"/>
+                    <tabBarItem key="tabBarItem" title="도시" image="location.fill" catalog="system" id="QqH-y4-Te8"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MpE-b6-k3a">
                         <rect key="frame" x="0.0" y="59" width="430" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

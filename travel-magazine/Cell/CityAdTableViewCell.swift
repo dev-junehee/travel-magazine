@@ -8,9 +8,7 @@
 import UIKit
 
 class CityAdTableViewCell: UITableViewCell {
-    
-    static let identifier = "CityAdTableViewCell"
-    
+
     @IBOutlet var adTextLabel: UILabel!
     @IBOutlet var adBadgeLabel: UILabel!
 
@@ -38,5 +36,11 @@ class CityAdTableViewCell: UITableViewCell {
     
     func configureCellData(data: Travel) {
         adTextLabel.text = data.title
+    }
+}
+
+extension CityAdTableViewCell: ReuseIdentifierProtocol {
+    static var identifier: String {
+        return String(describing: self)
     }
 }

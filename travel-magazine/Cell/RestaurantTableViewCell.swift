@@ -9,8 +9,6 @@ import UIKit
 import Kingfisher
 
 class RestaurantTableViewCell: UITableViewCell {
-    
-    static let identifier = "RestaurantTableViewCell"
 
     @IBOutlet var mainImageView: UIImageView!
     @IBOutlet var mainTitle: UILabel!
@@ -51,3 +49,8 @@ class RestaurantTableViewCell: UITableViewCell {
     
 }
 
+extension RestaurantTableViewCell: ReuseIdentifierProtocol {
+    static var identifier: String {
+        return String(describing: self)
+    }
+}

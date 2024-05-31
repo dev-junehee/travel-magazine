@@ -7,31 +7,46 @@
 
 import UIKit
 
-class CityInfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    @IBOutlet var travelTableView: UITableView!
-    
+class CityInfoViewController: UIViewController {
+
     var travelList = TravelInfo().travel
     
     let infoIdentifier = CityInfoTableViewCell.identifier
     let adIdentifier = CityAdTableViewCell.identifier
     
+    @IBOutlet var travelTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureViewTitle("도시 상세 정보")
-        
+        configureViewTitle("도시 상세 정보📍")
+        configureTravelTableView()
+    }
+    
+    func configureTravelTableView() {
         travelTableView.delegate = self
         travelTableView.dataSource = self
-        
-        travelTableView.rowHeight = 120
         
         let infoXib = UINib(nibName: infoIdentifier, bundle: nil)
         let adXib = UINib(nibName: adIdentifier, bundle: nil)
         travelTableView.register(infoXib, forCellReuseIdentifier: infoIdentifier)
         travelTableView.register(adXib, forCellReuseIdentifier: adIdentifier)
+        
+        travelTableView.rowHeight = 120
     }
     
+    
+    
+    @objc func likeButtonClicked(_ sender: UIButton) {
+        let idx = sender.tag
+        travelList[idx].like?.toggle()
+        travelTableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .automatic)
+    }
+    
+}
+
+
+extension CityInfoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return travelList.count
     }
@@ -66,10 +81,10 @@ class CityInfoViewController: UIViewController, UITableViewDelegate, UITableView
         let travel = travelList[indexPath.row]
        
         let cityAdDetail = "CityAdDetail"
-        let cityAdDetailVC = "CityAdDetailViewController"
+        let cityAdDetailVC = CityAdDetailViewController.identifier
         
         let cityInfoDetail = "CityInfoDetail"
-        let cityInfoDatailVC = "CityInfoDetailViewController"
+        let cityInfoDatailVC = CityInfoDetailViewController.identifier
         
         if travel.ad {
             // if 광고 셀인 경우 - present(modal) 아래에서 위로 fullScreen
@@ -93,11 +108,4 @@ class CityInfoViewController: UIViewController, UITableViewDelegate, UITableView
         }
             
     }
-    
-    @objc func likeButtonClicked(_ sender: UIButton) {
-        let idx = sender.tag
-        travelList[idx].like?.toggle()
-        travelTableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .automatic)
-    }
-    
 }

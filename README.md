@@ -53,10 +53,13 @@
     - 셀 클릭 시 식당 세부 정보 및 지도 위치 제공 기능 추가
     
 #### 2024-05-31 (Fri)
+- 공통
+    - ReuseIdentifierProtocol 추가
 - 맛집 탭
     - RestaurantVC + Extension 분리 (SearchBar, TableView)
     - SearchBar, TableView configure 함수 분리
     - BarButton 생성 함수 분리
+    - 즐겨찾기 버튼 클릭 시 Alert 추가
 
 
 <br />
