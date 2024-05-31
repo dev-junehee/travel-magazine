@@ -18,7 +18,7 @@ class CityAdDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewTitle("광고")
-        setExitBarButton()
+        configureImageBarButton(title: nil, image: "xmark", target: self, action: #selector(exitButtontapped), direction: true)
         
         guard let titleData = titleData else { return }
         setTravelAdDetail(title: titleData)
@@ -34,13 +34,6 @@ class CityAdDetailViewController: UIViewController {
         
         detailAdImageView.image = UIImage(systemName: "heart.fill")
         detailAdImageView.tintColor = Colors.pink
-    }
-    
-    func setExitBarButton() {
-        let exitImage = UIImage(systemName: "xmark")
-        let exitButton = UIBarButtonItem(title: nil, image: exitImage, target: self, action: #selector(exitButtontapped))
-        navigationItem.leftBarButtonItem = exitButton
-        navigationItem.leftBarButtonItem?.tintColor = Colors.black
     }
     
     @objc func exitButtontapped() {
