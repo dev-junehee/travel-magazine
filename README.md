@@ -60,6 +60,7 @@
     - SearchBar, TableView configure 함수 분리
     - Property Observer 추가
     - BarButton 생성 함수 분리
+    - 즐겨찾기 필터링 로직 수정 (filtered → original)
     - 즐겨찾기 버튼 클릭 시 Alert 추가
 - 도시 상세 탭
     - BarButton 생성 함수 수정 (분리했던 Extension 사용)
