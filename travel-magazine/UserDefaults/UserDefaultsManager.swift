@@ -18,7 +18,6 @@ class UserDefaultsManager {
             UserDefaults.standard.set(newValue, forKey: "restaurant")
         }
     }
-
 }
 
 
