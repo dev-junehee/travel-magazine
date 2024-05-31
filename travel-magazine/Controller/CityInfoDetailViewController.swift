@@ -52,11 +52,11 @@ class CityInfoDetailViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    // 별점 출력 로직 수정하기!
+    // 별점
     func convertGradeToStar(grade: Double) -> String {
-        let intGrade = Int(grade)
-        let stars = ["⭐️", "⭐️⭐️", "⭐️⭐️⭐️","⭐️⭐️⭐️⭐️","⭐️⭐️⭐️⭐️⭐️",]
+        let roundGrade = Int(round(grade))
+        let stars = ["별점이 없어요...☹️", "⭐️", "⭐️⭐️", "⭐️⭐️⭐️","⭐️⭐️⭐️⭐️","⭐️⭐️⭐️⭐️⭐️",]
         
-        return stars[intGrade - 1]
+        return stars[roundGrade]
     }
 }
