@@ -47,13 +47,13 @@ class RestaurantMapViewController: UIViewController {
         // 좋아요 버튼
         let heart = data.like ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
         likeButton.setImage(heart, for: .normal)
-        likeButton.tintColor = .systemPink
+        likeButton.tintColor = Colors.pink
         
         // 식당 주소&연락처 표시
         restaurantAddressLabel.text = data.address
-        restaurantAddressLabel.font = .boldSystemFont(ofSize: 14)
+        restaurantAddressLabel.font = Fonts.title14
         restaurantPhoneLabel.text = data.phoneNumber
-        restaurantPhoneLabel.font = .systemFont(ofSize: 14)
+        restaurantPhoneLabel.font = Fonts.subTitle14
         
         // 식당 위치 표시 (지도)
         let center = CLLocationCoordinate2D(latitude: data.latitude, longitude: data.longitude)
@@ -70,7 +70,7 @@ class RestaurantMapViewController: UIViewController {
         let popImage = UIImage(systemName: "chevron.left")
         let popButton = UIBarButtonItem(title: nil, image: popImage, target: self, action: #selector(popBarButtonClicked))
         navigationItem.leftBarButtonItem = popButton
-        navigationItem.leftBarButtonItem?.tintColor = .black
+        navigationItem.leftBarButtonItem?.tintColor = Colors.black
     }
     
     @objc func popBarButtonClicked() {

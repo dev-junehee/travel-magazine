@@ -8,19 +8,27 @@
 import UIKit
 
 extension UILabel {
-    
-    func setTitleLabel() {
-        self.font = .boldSystemFont(ofSize: 16)
+    func setTitleLabel20() {
+        self.font = Fonts.title20
     }
     
-    func setSubTitleLable() {
-        self.font = .systemFont(ofSize: 14)
+    func setTitleLabel16() {
+        self.font = Fonts.title16
+    }
+    
+    func setSubTitleLabel16() {
+        self.font = Fonts.subTitle16
+        self.numberOfLines = 0
+    }
+    
+    func setSubTitleLabel14() {
+        self.font = Fonts.subTitle14
         self.numberOfLines = 0
     }
     
     func setDescriptionLabel() {
-        self.font = .systemFont(ofSize: 12)
-        self.textColor = .systemGray
+        self.font = Fonts.small
+        self.textColor = Colors.gray
         self.numberOfLines = 0
     }
     

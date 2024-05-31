@@ -33,14 +33,14 @@ class CityAdDetailViewController: UIViewController {
         detailAdLabel.font = .boldSystemFont(ofSize: 24)
         
         detailAdImageView.image = UIImage(systemName: "heart.fill")
-        detailAdImageView.tintColor = .systemPink
+        detailAdImageView.tintColor = Colors.pink
     }
     
     func setExitBarButton() {
         let exitImage = UIImage(systemName: "xmark")
         let exitButton = UIBarButtonItem(title: nil, image: exitImage, target: self, action: #selector(exitButtontapped))
         navigationItem.leftBarButtonItem = exitButton
-        navigationItem.leftBarButtonItem?.tintColor = .black
+        navigationItem.leftBarButtonItem?.tintColor = Colors.black
     }
     
     @objc func exitButtontapped() {

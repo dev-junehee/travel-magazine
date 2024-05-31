@@ -40,7 +40,7 @@ class CityInfoDetailViewController: UIViewController {
         // 설명
         detailDescriptionLabel.text = " \(data.description!) "
         detailDescriptionLabel.textAlignment = .center
-        detailDescriptionLabel.font = .boldSystemFont(ofSize: 18)
+        detailDescriptionLabel.font = Fonts.title18
         // 별점
         detailGradeLabel.text = convertGradeToStar(grade: data.grade!)
         detailGradeLabel.textAlignment = .center
@@ -51,7 +51,7 @@ class CityInfoDetailViewController: UIViewController {
         let popImage = UIImage(systemName: "chevron.left")
         let popButton = UIBarButtonItem(title: nil, image: popImage, target: self, action: #selector(popBarButtonClicked))
         navigationItem.leftBarButtonItem = popButton
-        navigationItem.leftBarButtonItem?.tintColor = .black
+        navigationItem.leftBarButtonItem?.tintColor = Colors.black
     }
     
     @objc func popBarButtonClicked() {

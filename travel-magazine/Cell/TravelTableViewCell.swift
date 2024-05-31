@@ -23,16 +23,17 @@ class TravelTableViewCell: UITableViewCell {
         mainImage.contentMode = .scaleAspectFill
         mainImage.layer.cornerRadius = 10
         
-        mainTitle.font = .systemFont(ofSize: 18, weight: .bold)
+        mainTitle.font = Fonts.title20
         mainTitle.numberOfLines = 0
         
-        subTitle.font = .systemFont(ofSize: 14, weight: .medium)
-        subTitle.textColor = .systemGray
+        subTitle.font = Fonts.subTitle16
+        subTitle.textColor = Colors.gray
         subTitle.numberOfLines = 0
         
         dateLabel.textAlignment = .right
-        dateLabel.textColor = .systemGray
-        dateLabel.font = .systemFont(ofSize: 12, weight: .medium)
+        dateLabel.textColor = Colors.gray
+        dateLabel.font = Fonts.small
+        
     }
     
     func configureCellData(data: Magazine) {

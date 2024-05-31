@@ -23,7 +23,7 @@ extension UIViewController: ReuseIdentifierProtocol {
     func configureBarButton(title: String?, style: UIBarButtonItem.Style, target: Any?, action: Selector?, direction: Bool) {
         let barButton = UIBarButtonItem(title: title, style: style, target: target, action: action)
         
-        barButton.tintColor = Colors.barButton
+        barButton.tintColor = Colors.black
         
         if direction {
             navigationItem.leftBarButtonItem = barButton

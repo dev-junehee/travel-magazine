@@ -8,6 +8,8 @@
 import UIKit
 
 struct Colors {
-    static let barButton = UIColor.black
-    static let likeButton = UIColor.systemPink
+    // UIKit
+    static let black = UIColor.black
+    static let pink = UIColor.systemPink
+    static let gray = UIColor.systemGray
 }

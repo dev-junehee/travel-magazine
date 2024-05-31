@@ -23,8 +23,8 @@ class RestaurantTableViewCell: UITableViewCell {
     }
     
     func configureCellUI() {
-        mainTitle.setTitleLabel()
-        subTitle.setSubTitleLable()
+        mainTitle.setTitleLabel16()
+        subTitle.setSubTitleLabel14()
         descriptionLabel.setDescriptionLabel()
         likeButton.setLikeButton()
     }
