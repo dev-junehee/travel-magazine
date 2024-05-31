@@ -23,6 +23,7 @@ class CityInfoViewController: UIViewController {
         configureTravelTableView()
     }
     
+    // TableView 초기 설정
     func configureTravelTableView() {
         travelTableView.delegate = self
         travelTableView.dataSource = self
@@ -35,8 +36,6 @@ class CityInfoViewController: UIViewController {
         travelTableView.rowHeight = 120
     }
     
-    
-    
     @objc func likeButtonClicked(_ sender: UIButton) {
         let idx = sender.tag
         travelList[idx].like?.toggle()
@@ -45,7 +44,7 @@ class CityInfoViewController: UIViewController {
     
 }
 
-
+// MARK: Extension
 extension CityInfoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return travelList.count

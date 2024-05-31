@@ -33,8 +33,8 @@ class RestaurantViewController: UIViewController {
         configureViewTitle("맛집을 찾아요🍕")
         configureRestaurantTableView()
         configureRestaurantSearchBar()
-        configureBarButton(title: "전체", style: .plain, target: self, action: #selector(allBarButtonClicked), direction: true)
-        configureBarButton(title: "즐겨찾기", style: .plain, target: self, action: #selector(likeBarButtonClicked), direction: false)
+        configureTextBarButton(title: "전체", style: .plain, target: self, action: #selector(allBarButtonClicked), direction: true)
+        configureTextBarButton(title: "즐겨찾기", style: .plain, target: self, action: #selector(likeBarButtonClicked), direction: false)
     }
     
     // MARK: 초기 설정 함수

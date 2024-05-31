@@ -19,9 +19,22 @@ extension UIViewController: ReuseIdentifierProtocol {
         navigationItem.title = title
     }
     
-    // 네비게이션 아이템 BarButton 설정
-    func configureBarButton(title: String?, style: UIBarButtonItem.Style, target: Any?, action: Selector?, direction: Bool) {
+    // 네비게이션 아이템 BarButton 설정 - text
+    func configureTextBarButton(title: String?, style: UIBarButtonItem.Style, target: Any?, action: Selector?, direction: Bool) {
         let barButton = UIBarButtonItem(title: title, style: style, target: target, action: action)
+        
+        barButton.tintColor = Colors.black
+        
+        if direction {
+            navigationItem.leftBarButtonItem = barButton
+        } else {
+            navigationItem.rightBarButtonItem = barButton
+        }
+    }
+    
+    // 네비게이션 아이템 BarButton 설정 - image
+    func configureImageBarButton(title: String?, image: String, target: AnyObject?, action: Selector?, direction: Bool) {
+        let barButton = UIBarButtonItem(title: title, image: UIImage(systemName: image), target: target, action: action)
         
         barButton.tintColor = Colors.black
         

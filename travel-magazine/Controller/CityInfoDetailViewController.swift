@@ -18,7 +18,8 @@ class CityInfoDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setPopBarButton()
+        
+        configureImageBarButton(title: nil, image: "chevron.left", target: self, action: #selector(popBarButtonClicked), direction: true)
         
         guard let detailData = detailData else {
             showAlert("데이터가 올바르지 않아요!")
@@ -45,13 +46,6 @@ class CityInfoDetailViewController: UIViewController {
         detailGradeLabel.text = convertGradeToStar(grade: data.grade!)
         detailGradeLabel.textAlignment = .center
         detailGradeLabel.font = .systemFont(ofSize: 30)
-    }
-
-    func setPopBarButton() {
-        let popImage = UIImage(systemName: "chevron.left")
-        let popButton = UIBarButtonItem(title: nil, image: popImage, target: self, action: #selector(popBarButtonClicked))
-        navigationItem.leftBarButtonItem = popButton
-        navigationItem.leftBarButtonItem?.tintColor = Colors.black
     }
     
     @objc func popBarButtonClicked() {
