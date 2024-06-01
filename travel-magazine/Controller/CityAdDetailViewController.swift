@@ -17,7 +17,7 @@ class CityAdDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureViewTitle("광고")
+        configureViewTitle(Common.Title.ad)
         configureImageBarButton(title: nil, image: "xmark", target: self, action: #selector(exitButtontapped), direction: true)
         
         guard let titleData = titleData else { return }

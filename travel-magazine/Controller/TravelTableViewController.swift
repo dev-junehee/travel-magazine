@@ -15,7 +15,7 @@ class TravelTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureViewTitle("여행을 떠나요🏝️")
+        configureViewTitle(Common.Title.travel)
         tableView.rowHeight = 500
     }
     

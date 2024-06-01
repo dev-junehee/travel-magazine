@@ -19,7 +19,7 @@ class CityInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureViewTitle("도시 상세 정보📍")
+        configureViewTitle(Common.Title.city)
         configureTravelTableView()
     }
     

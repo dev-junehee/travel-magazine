@@ -10,6 +10,7 @@ import UIKit
 class RestaurantViewController: UIViewController {
     
     let UD = UserDefaultsManager()
+    
     let identifier = RestaurantTableViewCell.identifier
     
     var originalRestaurantList: [Restaurant] = [] {
@@ -30,11 +31,12 @@ class RestaurantViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureViewTitle("맛집을 찾아요🍕")
+        configureViewTitle(Common.Title.restaurant)
         configureRestaurantTableView()
         configureRestaurantSearchBar()
-        configureTextBarButton(title: "전체", style: .plain, target: self, action: #selector(allBarButtonClicked), direction: true)
-        configureTextBarButton(title: "즐겨찾기", style: .plain, target: self, action: #selector(likeBarButtonClicked), direction: false)
+        configureTextBarButton(title: Common.Button.all, style: .plain, target: self, action: #selector(allBarButtonClicked), direction: true)
+        configureTextBarButton(title: Common.Button.like, style: .plain, target: self, action: #selector(likeBarButtonClicked), direction: false)
+        
     }
     
     // MARK: 초기 설정 함수
@@ -45,7 +47,16 @@ class RestaurantViewController: UIViewController {
         
         let xib = UINib(nibName: identifier, bundle: nil)
         RestaurantTableView.register(xib, forCellReuseIdentifier: identifier)
-     
+        
+        encodingArrayToBase64(data: RestaurantList().restaurantArray, key: "restaurant")
+        
+//        let decoder = JSONDecoder()
+//        let test = try! decoder.decode(UD.restaurantList, from: "restaurant")
+//        print(test)
+        
+//        print("111", UD.restaurantList = RestaurantList().restaurantArray)
+//        print("222", UD.restaurantList)
+        
         originalRestaurantList = RestaurantList().restaurantArray
         filteredRestaurantList = originalRestaurantList
         
@@ -55,24 +66,28 @@ class RestaurantViewController: UIViewController {
     // SearchBar 초기 설정
     func configureRestaurantSearchBar() {
         RestaurantSearchBar.delegate = self
-        RestaurantSearchBar.placeholder = "맛집 이름이나 카테고리를 검색해 보세요!"
+        RestaurantSearchBar.placeholder = Common.Placeholder.searchRestaurant
     }
     
     // MARK: Base64 인코딩
-//    enum OriginData {
-//        case Magazine
-//        case Restaurant
-//        case Travel
-//        case City
-//    }
+    enum OriginData {
+        case Magazine
+        case Restaurant
+        case Travel
+        case City
+    }
     
     // UserDefaults Base64 Encoding
-//    func encodingArrayToBase64(data: Array<OriginData>, key: String) {
-//        let encoder = JSONEncoder()
+    func encodingArrayToBase64(data: [Restaurant], key: String) {
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(data) {
+            UserDefaults.standard.setValue(encoded, forKey: key)
+        }
+    }
+    
+//    func decodingData(data: [Restaurant], key: String) {
+//        let decoder = JSONDecoder()
 //        
-//        if let encodedData = try? JSONEncoder().encode(data) {
-//            UserDefaults.standard.set(encodedData, forKey: key)
-//        }
 //    }
     
     // MARK: 핸들러
@@ -113,10 +128,10 @@ class RestaurantViewController: UIViewController {
     // 즐겨찾기 등록 & 해제 Alert
     // 추후 모듈화 & 핸들러 추가하기
     func showAlertToLike() {
-        let alert = UIAlertController(title: "즐겨찾기를 등록하시겠습니까?", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: Common.Alert.like, message: nil, preferredStyle: .alert)
         
-        let confirm = UIAlertAction(title: "확인", style: .default, handler: nil)
-        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        let confirm = UIAlertAction(title: Common.Button.confirm, style: .default, handler: nil)
+        let cancel = UIAlertAction(title: Common.Button.cancel, style: .cancel, handler: nil)
         
         alert.addAction(confirm)
         alert.addAction(cancel)
@@ -125,10 +140,10 @@ class RestaurantViewController: UIViewController {
     }
     
     func showAlertToUnlike() {
-        let alert = UIAlertController(title: "즐겨찾기를 해제하시겠습니까?", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: Common.Alert.unLike, message: nil, preferredStyle: .alert)
         
-        let confirm = UIAlertAction(title: "확인", style: .default, handler: nil)
-        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        let confirm = UIAlertAction(title: Common.Button.confirm, style: .default, handler: nil)
+        let cancel = UIAlertAction(title: Common.Button.cancel, style: .cancel, handler: nil)
         
         alert.addAction(confirm)
         alert.addAction(cancel)
@@ -145,12 +160,12 @@ extension RestaurantViewController: UISearchBarDelegate {
         var searchList: [Restaurant] = []
         
         guard let searchText = searchBar.text else {
-            showAlert("검색어를 입력해 주세요!")
+            showAlert(Common.Alert.noSearchText)
             return
         }
         
         if searchText.trimmingCharacters(in: .whitespacesAndNewlines).count == 0 {
-            showAlert("1글자 이상의 검색어를 입력해 주세요!")
+            showAlert(Common.Alert.invalidSearchText)
             return
         }
         
@@ -161,7 +176,7 @@ extension RestaurantViewController: UISearchBarDelegate {
         }
         
         if searchList.isEmpty {
-            showAlert("찾고있는 맛집이 없어요😰")
+            showAlert(Common.Alert.noRestaurant)
             return
         }
         

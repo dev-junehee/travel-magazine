@@ -22,7 +22,7 @@ class CityInfoDetailViewController: UIViewController {
         configureImageBarButton(title: nil, image: "chevron.left", target: self, action: #selector(popBarButtonClicked), direction: true)
         
         guard let detailData = detailData else {
-            showAlert("데이터가 올바르지 않아요!")
+            showAlert(Common.Alert.invalidData)
             return
         }
         setTravelInfoDetail(data: detailData)

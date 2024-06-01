@@ -14,6 +14,7 @@ class PopularCityViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet var popularCityTableView: UITableView!
     
     let cityList = CityInfo().city
+    
     var filteredList: [City] = [] {
         didSet {
             popularCityTableView.reloadData()
@@ -24,7 +25,7 @@ class PopularCityViewController: UIViewController, UISearchBarDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureViewTitle("인기 도시")
+        configureViewTitle(Common.Title.popularCity)
         
         configurePopularCitySearchBar()
         configurePopularCityTableView()
@@ -51,14 +52,14 @@ class PopularCityViewController: UIViewController, UISearchBarDelegate {
     // SearchBar 초기 설정
     func configurePopularCitySearchBar() {
         popularCitySearchBar.delegate = self
-        popularCitySearchBar.placeholder = "도시명을 검색해 보세요!"
+        popularCitySearchBar.placeholder = Common.Placeholder.searchCity
     }
     
     // Segmented Control 초기 설정
     func configureSegmentedControl() {
-        popularCitySC.insertSegment(withTitle: "전체", at: 0, animated: true)
-        popularCitySC.setTitle("국내", forSegmentAt: 1)
-        popularCitySC.setTitle("해외", forSegmentAt: 2)
+        popularCitySC.insertSegment(withTitle: Common.Button.all, at: 0, animated: true)
+        popularCitySC.setTitle(Common.Button.domestic, forSegmentAt: 1)
+        popularCitySC.setTitle(Common.Button.abroad, forSegmentAt: 2)
         popularCitySC.addTarget(self, action: #selector(popularCitySCClicked), for: .valueChanged)
         popularCitySC.selectedSegmentIndex = 0  // 0번째로 고정
     }
@@ -78,7 +79,7 @@ class PopularCityViewController: UIViewController, UISearchBarDelegate {
             filteredList = cityList.filter { !$0.domestic_travel }
             break
         default:
-            showAlert("올바른 카테고리 선택이 아닙니다.")
+            showAlert(Common.Alert.invalidCategory)
             break
         }
     }
@@ -89,7 +90,7 @@ class PopularCityViewController: UIViewController, UISearchBarDelegate {
         let segmentIdx = popularCitySC.selectedSegmentIndex
         
         if searchText.isEmpty || (searchText.trimmingCharacters(in: .whitespacesAndNewlines).count == 0) {
-            showAlert("검색어를 입력해 주세요!")
+            showAlert(Common.Alert.noSearchText)
             return
         }
         
@@ -100,7 +101,7 @@ class PopularCityViewController: UIViewController, UISearchBarDelegate {
         } else if segmentIdx == 2 {
             filteredList = cityList.filter { !$0.domestic_travel && $0.city_name.contains(searchText) }
         } else {
-            showAlert("올바른 검색어를 입력해 주세요!")
+            showAlert(Common.Alert.invalidSearchText)
         }
         view.endEditing(true)
     }
@@ -116,7 +117,7 @@ extension PopularCityViewController: UITableViewDelegate, UITableViewDataSource 
     // 섹션 수 설정
     func numberOfSections(in tableView: UITableView) -> Int {
         if filteredList.count == 0 {
-            showAlert("검색 결과가 존재하지 않아요😿")
+            showAlert(Common.Alert.noResult)
             return 0
         }
         return filteredList.count
