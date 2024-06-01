@@ -36,7 +36,7 @@ struct Common {
         static let invalidData = "데이터가 올바르지 않아요!"
         static let noSearchText = "검색어를 입력해 주세요!"
         static let like = "즐겨찾기를 등록하시겠습니까?"
-        static let unLike = ""
+        static let unLike = "즐겨찾기를 해제하시겠습니까?"
         static let noResult = "검색 결과가 존재하지 않아요😿"
         static let noRestaurant = "찾고있는 맛집이 없어요😰"
     }

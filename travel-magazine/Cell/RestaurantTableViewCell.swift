@@ -35,6 +35,7 @@ class RestaurantTableViewCell: UITableViewCell {
         let loading = UIImage(systemName: "fork.nife.circle.fill")
         mainImageView.kf.setImage(with: url, placeholder: loading)
         mainImageView.contentMode = .scaleAspectFill
+        mainImageView.layer.cornerRadius = 10
         
         mainTitle.text = "\(data.name) | \(data.category)"
         subTitle.text = data.address
