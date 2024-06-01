@@ -85,9 +85,15 @@
 <div markdown="1">
 <b>문제 상황</b>
 <br />
-
+cornerRadius를 적용하고 싶은 요소들 중 최상위 요소인 ImageView에 clipsToBounds를 true로 설정했지만 ExplainLabel에는 cornerRadius가 적용되지 않는 문제 발생!
+<br />
 <b>해결 방법</b>
 <br />
+UIImageView는 clipsToBounds의 기본값이 true이고, UILabel은 false이기 때문에 UIImageView에 clipsToBounds를 true로 설정하면 텍스트 레이블에는 적용되지 않는다. 따라서 clipsToBounds의 기본값이 true인 ImageView에는 cornerRadius를 바로 적용하고, ExplainLabel에는 clipsToBounds와 cornerRadius를 함께 적용하여 해결!
+<br />
+<b>관련 블로그 포스팅</b>
+<br />
+https://velog.io/@devjunehee/UILabel%EC%97%90-CornerRadius%EA%B0%80-%EC%A0%81%EC%9A%A9%EC%9D%B4-%EC%95%88-%EB%8F%BC%EC%9A%94
 </div>
 </details>
 
@@ -105,8 +111,7 @@
 <br />
 UILable.layer.cornerRadius를 적용하기 전 UILable.clipsToBounds 속성을 true로 변경해주어 해결
 <br />
-[clipsToBounds](https://developer.apple.com/documentation/uikit/uiview/1622415-clipstobounds)
-UIView에 속해있는 인스턴스 프로퍼티로 하위 View가 나의 View를 넘어선 경우, 나의 View를 넘어서 그릴 것인지를 설정하는 Bool 인스턴스. 기본값은 false. clipsToBounds를 true로 설정하면 하위 View가 View 경계에 맞게 잘려진다.
+clipsToBounds는 UIView에 속해있는 인스턴스 프로퍼티로 하위 View가 나의 View를 넘어선 경우, 나의 View를 넘어서 그릴 것인지를 설정하는 Bool 인스턴스. 기본값은 false. clipsToBounds를 true로 설정하면 하위 View가 View 경계에 맞게 잘려진다.
 </div>
 </details>
 
