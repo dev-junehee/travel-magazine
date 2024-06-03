@@ -58,6 +58,7 @@ extension CityInfoViewController: UITableViewDelegate, UITableViewDataSource {
         if travel.ad {
             let cell = tableView.dequeueReusableCell(withIdentifier: adIdentifier, for: indexPath) as! CityAdTableViewCell
             
+            cell.adTextLabel.backgroundColor = travel.bgColor
             cell.configureCellUI()
             cell.configureCellData(data: travel)
             cell.selectionStyle = .none
@@ -90,7 +91,7 @@ extension CityInfoViewController: UITableViewDelegate, UITableViewDataSource {
             let sb = UIStoryboard(name: cityAdDetail, bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: cityAdDetailVC) as! CityAdDetailViewController
 
-            vc.titleData = travel.title  // 광고 텍스트만 전달
+            vc.adData = travel
             
             let nav = UINavigationController(rootViewController: vc)
             nav.modalPresentationStyle = .fullScreen
@@ -101,7 +102,7 @@ extension CityInfoViewController: UITableViewDelegate, UITableViewDataSource {
             let sb = UIStoryboard(name: cityInfoDetail, bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: cityInfoDatailVC) as! CityInfoDetailViewController
             
-            vc.detailData = travel  // 데이터 전체 전달
+            vc.detailData = travel
             
             navigationController?.pushViewController(vc, animated: true)
         }

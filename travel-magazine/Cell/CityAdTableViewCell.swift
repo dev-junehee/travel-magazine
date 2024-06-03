@@ -24,7 +24,7 @@ class CityAdTableViewCell: UITableViewCell {
         adTextLabel.textAlignment = .center
         adTextLabel.numberOfLines = 0
         
-        adTextLabel.randomBackgroundColor()
+//        adTextLabel.backgroundColor = Colors.random
         adTextLabel.clipsToBounds = true
         adTextLabel.layer.cornerRadius = 10
         

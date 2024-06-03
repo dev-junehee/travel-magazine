@@ -8,7 +8,6 @@
 import UIKit
 
 struct Colors {
-    // UIKit
     static let black = UIColor.black
     static let pink = UIColor.systemPink
     static let gray = UIColor.systemGray

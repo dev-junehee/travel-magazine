@@ -9,7 +9,7 @@ import UIKit
 
 class CityAdDetailViewController: UIViewController {
     
-    var titleData: String?
+    var adData: Travel?
     
     @IBOutlet var detailAdView: UIView!
     @IBOutlet var detailAdLabel: UILabel!
@@ -20,12 +20,13 @@ class CityAdDetailViewController: UIViewController {
         configureViewTitle(Common.Title.ad)
         configureImageBarButton(title: nil, image: "xmark", target: self, action: #selector(exitButtontapped), type: .left)
         
-        guard let titleData = titleData else { return }
-        setTravelAdDetail(title: titleData)
+        guard let adData = adData else { return }
+        setTravelAdDetail(title: adData.title)
+//        view.backgroundColor = adData.bgColor
     }
     
     func setTravelAdDetail(title: String) {
-        detailAdView.backgroundColor = .systemGray6
+        detailAdView.backgroundColor = adData?.bgColor
         
         detailAdLabel.text = title
         detailAdLabel.textAlignment = .center

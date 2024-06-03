@@ -5,7 +5,7 @@
 //  Created by junehee on 5/29/24.
 //
 
-import Foundation
+import UIKit
 
 struct Travel {
     let title: String
@@ -15,6 +15,18 @@ struct Travel {
     let save: Int?
     var like: Bool?
     let ad: Bool
+    let bgColor: UIColor?
+    
+    init(title: String, description: String?, travel_image: String?, grade: Double?, save: Int?, like: Bool? = nil, ad: Bool) {
+        self.title = title
+        self.description = description
+        self.travel_image = travel_image
+        self.grade = grade
+        self.save = save
+        self.like = like
+        self.ad = ad
+        self.bgColor = ad == true ? UIColor.random() : .clear
+    }
 }
 
 struct TravelInfo {

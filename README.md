@@ -75,7 +75,13 @@
 - 맛집 탭 - 맛집 이미지 cornerRadius 적용
 
 #### 2024-06-03 (Mon)
-- 바 버튼 생성 함수 Enum 적용
+- 공통
+    - barButton 생성 함수 Enum 적용
+    - UIColor Extension - 랜덤 색상 함수 추가
+- 도시 탭
+    - Travel 구조체 bgColor 프로퍼티 추가
+    - 백그라운드 색상 UIColor.random() 적용
+    - 광고 셀 클릭 시 광고 셀 색상과 동일한 view present 되도록 수정 (텍스트만 전달 → 데이터 전체 전달)
 
 <br />
 
