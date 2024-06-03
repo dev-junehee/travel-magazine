@@ -24,7 +24,6 @@ class CityAdTableViewCell: UITableViewCell {
         adTextLabel.textAlignment = .center
         adTextLabel.numberOfLines = 0
         
-//        adTextLabel.backgroundColor = Colors.random
         adTextLabel.clipsToBounds = true
         adTextLabel.layer.cornerRadius = 10
         
@@ -36,11 +35,5 @@ class CityAdTableViewCell: UITableViewCell {
     
     func configureCellData(data: Travel) {
         adTextLabel.text = data.title
-    }
-}
-
-extension CityAdTableViewCell: ReuseIdentifierProtocol {
-    static var identifier: String {
-        return String(describing: self)
     }
 }

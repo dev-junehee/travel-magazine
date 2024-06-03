@@ -63,11 +63,3 @@ class TravelTableViewCell: UITableViewCell {
         return formattedString
     }
 }
-
-extension TravelTableViewCell: ReuseIdentifierProtocol {
-    static var identifier: String {
-        return String(describing: self)  // self는 클래스의 인스턴스를 의미
-    }
-    
-}
-

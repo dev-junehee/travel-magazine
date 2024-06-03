@@ -23,6 +23,9 @@
 		C46196AC2C0DC3E0007D3B6B /* ChattingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46196AB2C0DC3E0007D3B6B /* ChattingData.swift */; };
 		C46196AE2C0DC463007D3B6B /* TravelTalk.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C46196AD2C0DC463007D3B6B /* TravelTalk.storyboard */; };
 		C46196B02C0DC496007D3B6B /* TravelTalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46196AF2C0DC496007D3B6B /* TravelTalkViewController.swift */; };
+		C46196B32C0DCDE3007D3B6B /* ChatRoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46196B12C0DCDE3007D3B6B /* ChatRoomTableViewCell.swift */; };
+		C46196B42C0DCDE3007D3B6B /* ChatRoomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C46196B22C0DCDE3007D3B6B /* ChatRoomTableViewCell.xib */; };
+		C46196B62C0DD7AB007D3B6B /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46196B52C0DD7AB007D3B6B /* UITableViewCell+Extension.swift */; };
 		C4708FA42C074E7F00E171F1 /* CityInfoDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4708FA32C074E7F00E171F1 /* CityInfoDetail.storyboard */; };
 		C4708FA62C074E8A00E171F1 /* CityAdDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4708FA52C074E8A00E171F1 /* CityAdDetail.storyboard */; };
 		C4708FA82C074F7800E171F1 /* CityInfoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4708FA72C074F7700E171F1 /* CityInfoDetailViewController.swift */; };
@@ -70,6 +73,9 @@
 		C46196AB2C0DC3E0007D3B6B /* ChattingData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChattingData.swift; sourceTree = "<group>"; };
 		C46196AD2C0DC463007D3B6B /* TravelTalk.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TravelTalk.storyboard; sourceTree = "<group>"; };
 		C46196AF2C0DC496007D3B6B /* TravelTalkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTalkViewController.swift; sourceTree = "<group>"; };
+		C46196B12C0DCDE3007D3B6B /* ChatRoomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomTableViewCell.swift; sourceTree = "<group>"; };
+		C46196B22C0DCDE3007D3B6B /* ChatRoomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatRoomTableViewCell.xib; sourceTree = "<group>"; };
+		C46196B52C0DD7AB007D3B6B /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		C4708FA32C074E7F00E171F1 /* CityInfoDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CityInfoDetail.storyboard; sourceTree = "<group>"; };
 		C4708FA52C074E8A00E171F1 /* CityAdDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CityAdDetail.storyboard; sourceTree = "<group>"; };
 		C4708FA72C074F7700E171F1 /* CityInfoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInfoDetailViewController.swift; sourceTree = "<group>"; };
@@ -207,6 +213,8 @@
 				C4CAF0DD2C04B8D100CFCBAB /* CityAdTableViewCell.xib */,
 				C461964A2C076904007D3B6B /* PopularCityTableViewCell.swift */,
 				C461964B2C076904007D3B6B /* PopularCityTableViewCell.xib */,
+				C46196B12C0DCDE3007D3B6B /* ChatRoomTableViewCell.swift */,
+				C46196B22C0DCDE3007D3B6B /* ChatRoomTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -218,6 +226,7 @@
 				C48B9DDE2C04A06E00073FA5 /* UILable+Extension.swift */,
 				C48B9DE02C04A2E600073FA5 /* UIButton+Extension.swift */,
 				C46196A72C0DB420007D3B6B /* UIColor+Extension.swift */,
+				C46196B52C0DD7AB007D3B6B /* UITableViewCell+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -329,6 +338,7 @@
 				C48B9DD92C04903100073FA5 /* RestaurantTableViewCell.xib in Resources */,
 				C4CAF0DE2C04B8D100CFCBAB /* CityAdTableViewCell.xib in Resources */,
 				C4B80BE62C03562600710EA3 /* Assets.xcassets in Resources */,
+				C46196B42C0DCDE3007D3B6B /* ChatRoomTableViewCell.xib in Resources */,
 				C4708FA42C074E7F00E171F1 /* CityInfoDetail.storyboard in Resources */,
 				C482C1462C0760EE007937D1 /* PopularCity.storyboard in Resources */,
 				C4B80BE92C03562600710EA3 /* Base in Resources */,
@@ -370,11 +380,13 @@
 				C4708FA82C074F7800E171F1 /* CityInfoDetailViewController.swift in Sources */,
 				C48B9DDC2C04910B00073FA5 /* RestaurantViewController.swift in Sources */,
 				C4B80BF32C0358E100710EA3 /* TravelTableViewCell.swift in Sources */,
+				C46196B32C0DCDE3007D3B6B /* ChatRoomTableViewCell.swift in Sources */,
 				C461966E2C09A2BC007D3B6B /* Fonts.swift in Sources */,
 				C4B80BF82C035BA500710EA3 /* TravelTableViewController.swift in Sources */,
 				C482C1402C07584F007937D1 /* MagazineInfo.swift in Sources */,
 				C48B9DDA2C04903100073FA5 /* RestaurantTableViewCell.swift in Sources */,
 				C461964C2C076904007D3B6B /* PopularCityTableViewCell.swift in Sources */,
+				C46196B62C0DD7AB007D3B6B /* UITableViewCell+Extension.swift in Sources */,
 				C4B80BDF2C03562500710EA3 /* SceneDelegate.swift in Sources */,
 				C4550D142C04B54B005DF918 /* CityInfoViewController.swift in Sources */,
 				C4CAF0DF2C04B8D100CFCBAB /* CityAdTableViewCell.swift in Sources */,

@@ -12,7 +12,7 @@
         <!--Travel Talk View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="TravelTalkViewController" customModule="travel_magazine" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TravelTalkViewController" id="Y6W-OH-hqX" customClass="TravelTalkViewController" customModule="travel_magazine" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,18 +24,27 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="kQ2-ll-wUl"/>
                                 </connections>
                             </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="d68-2N-1OF">
+                                <rect key="frame" x="0.0" y="159" width="393" height="659"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6zR-tM-irz" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="3bG-sY-Ds6"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="d68-2N-1OF" secondAttribute="trailing" id="9zM-pr-1wz"/>
+                            <constraint firstItem="d68-2N-1OF" firstAttribute="top" secondItem="6zR-tM-irz" secondAttribute="bottom" id="BDe-C0-NXO"/>
+                            <constraint firstItem="d68-2N-1OF" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Ez2-vX-lzW"/>
                             <constraint firstItem="6zR-tM-irz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fDa-Nu-aK4"/>
                             <constraint firstAttribute="trailing" secondItem="6zR-tM-irz" secondAttribute="trailing" id="hna-qK-DQM"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="d68-2N-1OF" secondAttribute="bottom" id="rIU-Pm-44W"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Z0U-ww-Uhi"/>
                     <connections>
                         <outlet property="talkSearchBar" destination="6zR-tM-irz" id="H31-lI-mxN"/>
+                        <outlet property="talkTableView" destination="d68-2N-1OF" id="JAY-fp-egr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

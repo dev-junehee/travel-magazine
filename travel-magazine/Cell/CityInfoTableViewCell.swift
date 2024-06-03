@@ -55,9 +55,3 @@ class CityInfoTableViewCell: UITableViewCell {
         likeButton.backgroundColor = .clear
     }
 }
-
-extension CityInfoTableViewCell: ReuseIdentifierProtocol {
-    static var identifier: String {
-        return String(describing: self)
-    }
-}

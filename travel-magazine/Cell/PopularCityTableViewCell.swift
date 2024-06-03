@@ -71,9 +71,3 @@ class PopularCityTableViewCell: UITableViewCell {
         popularCityExplainLabel.text = "  " + data.city_explain
     }
 }
-
-extension PopularCityTableViewCell: ReuseIdentifierProtocol {
-    static var identifier: String {
-        return String(describing: self)
-    }
-}

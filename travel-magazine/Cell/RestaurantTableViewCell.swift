@@ -49,9 +49,3 @@ class RestaurantTableViewCell: UITableViewCell {
     }
     
 }
-
-extension RestaurantTableViewCell: ReuseIdentifierProtocol {
-    static var identifier: String {
-        return String(describing: self)
-    }
-}
