@@ -10,4 +10,5 @@ struct StoryboardName {
     static let cityInfoDetail = "CityInfoDetail"
     static let cityAdDetail = "CityAdDetail"
     static let restaurantMap = "RestaurantMap"
+    static let travelTalk = "TravelTalk"
 }

@@ -13,6 +13,7 @@ struct Common {
         static let city = "도시 상세 정보📍"
         static let popularCity = "인기있는 도시✨"
         static let ad = "광고"
+        static let talk = "TRAVEL TALK"
     }
     
     struct Button {

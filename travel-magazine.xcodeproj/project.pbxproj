@@ -20,6 +20,9 @@
 		C46196762C0B61FE007D3B6B /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46196752C0B61FE007D3B6B /* Common.swift */; };
 		C46196A82C0DB420007D3B6B /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46196A72C0DB420007D3B6B /* UIColor+Extension.swift */; };
 		C46196AA2C0DBF4B007D3B6B /* StoryboardName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46196A92C0DBF4B007D3B6B /* StoryboardName.swift */; };
+		C46196AC2C0DC3E0007D3B6B /* ChattingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46196AB2C0DC3E0007D3B6B /* ChattingData.swift */; };
+		C46196AE2C0DC463007D3B6B /* TravelTalk.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C46196AD2C0DC463007D3B6B /* TravelTalk.storyboard */; };
+		C46196B02C0DC496007D3B6B /* TravelTalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46196AF2C0DC496007D3B6B /* TravelTalkViewController.swift */; };
 		C4708FA42C074E7F00E171F1 /* CityInfoDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4708FA32C074E7F00E171F1 /* CityInfoDetail.storyboard */; };
 		C4708FA62C074E8A00E171F1 /* CityAdDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4708FA52C074E8A00E171F1 /* CityAdDetail.storyboard */; };
 		C4708FA82C074F7800E171F1 /* CityInfoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4708FA72C074F7700E171F1 /* CityInfoDetailViewController.swift */; };
@@ -64,6 +67,9 @@
 		C46196752C0B61FE007D3B6B /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		C46196A72C0DB420007D3B6B /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		C46196A92C0DBF4B007D3B6B /* StoryboardName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardName.swift; sourceTree = "<group>"; };
+		C46196AB2C0DC3E0007D3B6B /* ChattingData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChattingData.swift; sourceTree = "<group>"; };
+		C46196AD2C0DC463007D3B6B /* TravelTalk.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TravelTalk.storyboard; sourceTree = "<group>"; };
+		C46196AF2C0DC496007D3B6B /* TravelTalkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTalkViewController.swift; sourceTree = "<group>"; };
 		C4708FA32C074E7F00E171F1 /* CityInfoDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CityInfoDetail.storyboard; sourceTree = "<group>"; };
 		C4708FA52C074E8A00E171F1 /* CityAdDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CityAdDetail.storyboard; sourceTree = "<group>"; };
 		C4708FA72C074F7700E171F1 /* CityInfoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInfoDetailViewController.swift; sourceTree = "<group>"; };
@@ -157,19 +163,21 @@
 				C4708FA52C074E8A00E171F1 /* CityAdDetail.storyboard */,
 				C482C1452C0760EE007937D1 /* PopularCity.storyboard */,
 				C46196592C08C5E9007D3B6B /* RestaurantMap.storyboard */,
+				C46196AD2C0DC463007D3B6B /* TravelTalk.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
-		C482C1442C0758A2007937D1 /* DummyData */ = {
+		C482C1442C0758A2007937D1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C46196AB2C0DC3E0007D3B6B /* ChattingData.swift */,
 				C461964E2C076B06007D3B6B /* CityInfo.swift */,
 				C482C13E2C07584F007937D1 /* MagazineInfo.swift */,
 				C482C13F2C07584F007937D1 /* TravelModel.swift */,
 				C482C1422C075877007937D1 /* Restaurant.swift */,
 			);
-			path = DummyData;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		C48B9DD12C048A6100073FA5 /* Controller */ = {
@@ -182,6 +190,7 @@
 				C4708FA72C074F7700E171F1 /* CityInfoDetailViewController.swift */,
 				C4708FA92C074F9700E171F1 /* CityAdDetailViewController.swift */,
 				C482C1472C076110007937D1 /* PopularCityViewController.swift */,
+				C46196AF2C0DC496007D3B6B /* TravelTalkViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -238,7 +247,7 @@
 				C461966C2C09A291007D3B6B /* Colors */,
 				C461966B2C09A286007D3B6B /* Fonts */,
 				C46196682C098A90007D3B6B /* UserDefaults */,
-				C482C1442C0758A2007937D1 /* DummyData */,
+				C482C1442C0758A2007937D1 /* Model */,
 				C48B9DDD2C0495DD00073FA5 /* Extension */,
 				C4708FA22C074E2400E171F1 /* Storyboard */,
 				C48B9DD22C048A7200073FA5 /* Cell */,
@@ -323,6 +332,7 @@
 				C4708FA42C074E7F00E171F1 /* CityInfoDetail.storyboard in Resources */,
 				C482C1462C0760EE007937D1 /* PopularCity.storyboard in Resources */,
 				C4B80BE92C03562600710EA3 /* Base in Resources */,
+				C46196AE2C0DC463007D3B6B /* TravelTalk.storyboard in Resources */,
 				C4B80BE42C03562500710EA3 /* Base in Resources */,
 				C461965A2C08C5E9007D3B6B /* RestaurantMap.storyboard in Resources */,
 				C4708FA62C074E8A00E171F1 /* CityAdDetail.storyboard in Resources */,
@@ -348,9 +358,11 @@
 				C46196A82C0DB420007D3B6B /* UIColor+Extension.swift in Sources */,
 				C46196732C09CD4E007D3B6B /* ReuseIdentifierProtocol.swift in Sources */,
 				C482C1412C07584F007937D1 /* TravelModel.swift in Sources */,
+				C46196B02C0DC496007D3B6B /* TravelTalkViewController.swift in Sources */,
 				C461966A2C098ACB007D3B6B /* UserDefaultsManager.swift in Sources */,
 				C48B9DDF2C04A06E00073FA5 /* UILable+Extension.swift in Sources */,
 				C48B9DE12C04A2E600073FA5 /* UIButton+Extension.swift in Sources */,
+				C46196AC2C0DC3E0007D3B6B /* ChattingData.swift in Sources */,
 				C4B80BDD2C03562500710EA3 /* AppDelegate.swift in Sources */,
 				C46196762C0B61FE007D3B6B /* Common.swift in Sources */,
 				C4CAF0DB2C04B8BA00CFCBAB /* CityInfoTableViewCell.swift in Sources */,
