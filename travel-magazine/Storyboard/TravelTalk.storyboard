@@ -45,11 +45,22 @@
                     <connections>
                         <outlet property="talkSearchBar" destination="6zR-tM-irz" id="H31-lI-mxN"/>
                         <outlet property="talkTableView" destination="d68-2N-1OF" id="JAY-fp-egr"/>
+                        <segue destination="KOd-dG-1FF" kind="push" id="cWM-Va-0wb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="936.64122137404581" y="-2.1126760563380285"/>
+        </scene>
+        <!--Chat-->
+        <scene sceneID="i7b-BZ-Jte">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Chat" id="KOd-dG-1FF" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="NFC-9z-Lcn"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bxz-eP-Jr4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1683" y="-2"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EAv-uV-9B8">
