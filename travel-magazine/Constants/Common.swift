@@ -28,6 +28,7 @@ struct Common {
     struct Placeholder {
         static let searchRestaurant = "맛집 이름이나 카테고리를 검색해 보세요!"
         static let searchCity = "도시명을 검색해 보세요!"
+        static let searchTalk = "친구 이름을 검색해 보세요! 👀"
     }
     
     struct Alert {

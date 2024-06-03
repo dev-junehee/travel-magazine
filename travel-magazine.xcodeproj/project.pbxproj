@@ -184,8 +184,8 @@
 			isa = PBXGroup;
 			children = (
 				C4B80BF72C035BA500710EA3 /* TravelTableViewController.swift */,
-				C461965B2C08C614007D3B6B /* RestaurantMapViewController.swift */,
 				C48B9DDB2C04910B00073FA5 /* RestaurantViewController.swift */,
+				C461965B2C08C614007D3B6B /* RestaurantMapViewController.swift */,
 				C4550D132C04B54B005DF918 /* CityInfoViewController.swift */,
 				C4708FA72C074F7700E171F1 /* CityInfoDetailViewController.swift */,
 				C4708FA92C074F9700E171F1 /* CityAdDetailViewController.swift */,

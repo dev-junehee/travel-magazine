@@ -8,22 +8,31 @@
 import UIKit
 
 class TravelTalkViewController: UIViewController {
-
+    
+    @IBOutlet var talkSearchBar: UISearchBar!
+    
+//    let chatRoomList: [ChatRoom] = []
+//    let fileredList: [ChatRoom] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configureViewTitle(Common.Title.talk)
+        configureTalkSearchBar()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func configureTalkSearchBar() {
+        talkSearchBar.delegate = self
+        talkSearchBar.placeholder = Common.Placeholder.searchTalk
     }
-    */
+   
 
+}
+
+// MARK: Extendion 익스텐션
+// SearchBar Extension
+extension TravelTalkViewController: UISearchBarDelegate {
+    func [ChatRoom] = [](_ searchBar: UISearchBar) {
+        view.endEditing(true)
+    }
 }
