@@ -17,6 +17,7 @@
     - Push - Pop
 - Protocol
 - MapKit
+- Enum
 
 <br />
 
@@ -69,12 +70,16 @@
     - SearchBar, TableView, Segmented Control configure 함수 분리
     - Property Observer 추가
 
+#### 2024-06-01 (Sat)
+- 문자열 텍스트 상수화
+- 맛집 탭 - 맛집 이미지 cornerRadius 적용
+
+#### 2024-06-03 (Mon)
+- 바 버튼 생성 함수 Enum 적용
+
 <br />
 
-## 화면 구성
-| **여행 정보** | **맛집 정보** | **도시 상세** |
-|:----:|:----:|:-----:|
-| <img width="300" src="https://github.com/dev-junehee/travel-magazine/assets/116873887/9d9e66b8-a04e-4879-a853-5cdd8e13dd26" /> | <img width="300" src="https://github.com/dev-junehee/travel-magazine/assets/116873887/4607cb24-e85f-4c7d-b417-d43be129759f" /> | |
+## 화면 구성 (추가 예정)
 
 
 <br />

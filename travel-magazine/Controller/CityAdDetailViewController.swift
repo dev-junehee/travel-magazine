@@ -18,7 +18,7 @@ class CityAdDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewTitle(Common.Title.ad)
-        configureImageBarButton(title: nil, image: "xmark", target: self, action: #selector(exitButtontapped), direction: true)
+        configureImageBarButton(title: nil, image: "xmark", target: self, action: #selector(exitButtontapped), type: .left)
         
         guard let titleData = titleData else { return }
         setTravelAdDetail(title: titleData)

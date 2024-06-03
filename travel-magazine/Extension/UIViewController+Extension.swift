@@ -7,6 +7,11 @@
 
 import UIKit
 
+enum barButtonType {
+    case left
+    case right
+}
+
 extension UIViewController: ReuseIdentifierProtocol {
     // MARK: 연산 프로퍼티로 identifier 사용
     static var identifier: String {
@@ -20,27 +25,29 @@ extension UIViewController: ReuseIdentifierProtocol {
     }
     
     // 네비게이션 아이템 BarButton 설정 - text
-    func configureTextBarButton(title: String?, style: UIBarButtonItem.Style, target: Any?, action: Selector?, direction: Bool) {
+    func configureTextBarButton(title: String?, style: UIBarButtonItem.Style, target: Any?, action: Selector?, type: barButtonType) {
         let barButton = UIBarButtonItem(title: title, style: style, target: target, action: action)
         
         barButton.tintColor = Colors.black
         
-        if direction {
+        switch type {
+        case .left:
             navigationItem.leftBarButtonItem = barButton
-        } else {
+        case .right:
             navigationItem.rightBarButtonItem = barButton
         }
     }
     
     // 네비게이션 아이템 BarButton 설정 - image
-    func configureImageBarButton(title: String?, image: String, target: AnyObject?, action: Selector?, direction: Bool) {
+    func configureImageBarButton(title: String?, image: String, target: AnyObject?, action: Selector?, type: barButtonType) {
         let barButton = UIBarButtonItem(title: title, image: UIImage(systemName: image), target: target, action: action)
         
         barButton.tintColor = Colors.black
         
-        if direction {
+        switch type {
+        case .left:
             navigationItem.leftBarButtonItem = barButton
-        } else {
+        case .right:
             navigationItem.rightBarButtonItem = barButton
         }
     }

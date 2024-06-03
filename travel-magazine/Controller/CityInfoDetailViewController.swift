@@ -19,7 +19,7 @@ class CityInfoDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureImageBarButton(title: nil, image: "chevron.left", target: self, action: #selector(popBarButtonClicked), direction: true)
+        configureImageBarButton(title: nil, image: "chevron.left", target: self, action: #selector(popBarButtonClicked), type: .left)
         
         guard let detailData = detailData else {
             showAlert(Common.Alert.invalidData)

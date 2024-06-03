@@ -34,8 +34,8 @@ class RestaurantViewController: UIViewController {
         configureViewTitle(Common.Title.restaurant)
         configureRestaurantTableView()
         configureRestaurantSearchBar()
-        configureTextBarButton(title: Common.Button.all, style: .plain, target: self, action: #selector(allBarButtonClicked), direction: true)
-        configureTextBarButton(title: Common.Button.like, style: .plain, target: self, action: #selector(likeBarButtonClicked), direction: false)
+        configureTextBarButton(title: Common.Button.all, style: .plain, target: self, action: #selector(allBarButtonClicked), type: .left)
+        configureTextBarButton(title: Common.Button.like, style: .plain, target: self, action: #selector(likeBarButtonClicked), type: .right)
         
     }
     
