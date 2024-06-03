@@ -25,7 +25,7 @@ class RestaurantMapViewController: UIViewController {
         super.viewDidLoad()
         
         // 커스텀 바 버튼 (뒤로가기)
-        setPopBarButton()
+        configureImageBarButton(title: nil, image: "chevron.left", target: self, action: #selector(popBarButtonClicked), type: .left)
         
         guard let mapData = mapData else { return }
         configureViewTitle(mapData.name)
@@ -64,13 +64,6 @@ class RestaurantMapViewController: UIViewController {
         annotation.coordinate = center
         annotation.title = data.name
         restaurantMapView.addAnnotation(annotation)
-    }
-    
-    func setPopBarButton() {
-        let popImage = UIImage(systemName: "chevron.left")
-        let popButton = UIBarButtonItem(title: nil, image: popImage, target: self, action: #selector(popBarButtonClicked))
-        navigationItem.leftBarButtonItem = popButton
-        navigationItem.leftBarButtonItem?.tintColor = Colors.black
     }
     
     @objc func popBarButtonClicked() {

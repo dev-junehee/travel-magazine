@@ -212,7 +212,7 @@ extension RestaurantViewController: UITableViewDelegate, UITableViewDataSource {
         let data = filteredRestaurantList[indexPath.row]
         
         let sb = UIStoryboard(name: "RestaurantMap", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "RestaurantMapViewController") as! RestaurantMapViewController
+        let vc = sb.instantiateViewController(withIdentifier: RestaurantMapViewController.identifier) as! RestaurantMapViewController
         
         vc.mapData = data
         
