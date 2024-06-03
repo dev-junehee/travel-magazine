@@ -201,11 +201,11 @@
             </objects>
             <point key="canvasLocation" x="2217" y="322"/>
         </scene>
-        <!--도시-->
+        <!--도시 상세-->
         <scene sceneID="Wfv-hz-QcE">
             <objects>
                 <navigationController id="vAC-t3-Mn2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="도시" image="location.fill" catalog="system" id="QqH-y4-Te8"/>
+                    <tabBarItem key="tabBarItem" title="도시 상세" image="location.fill" catalog="system" id="QqH-y4-Te8"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MpE-b6-k3a">
                         <rect key="frame" x="0.0" y="59" width="430" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

@@ -78,6 +78,7 @@
 - 공통
     - barButton 생성 함수 Enum 적용
     - UIColor Extension - 랜덤 색상 함수 추가
+    - 스토리보드 파일명 상수화
 - 도시 탭
     - Travel 구조체 bgColor 프로퍼티 추가
     - 백그라운드 색상 UIColor.random() 적용

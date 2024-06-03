@@ -5,7 +5,6 @@
 //  Created by junehee on 6/1/24.
 //
 
-//import Foundation
 
 struct Common {
     struct Title {

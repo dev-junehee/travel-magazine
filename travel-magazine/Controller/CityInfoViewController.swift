@@ -80,10 +80,10 @@ extension CityInfoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let travel = travelList[indexPath.row]
        
-        let cityAdDetail = "CityAdDetail"
+        let cityAdDetail = StoryboardName.cityAdDetail
         let cityAdDetailVC = CityAdDetailViewController.identifier
         
-        let cityInfoDetail = "CityInfoDetail"
+        let cityInfoDetail = StoryboardName.cityInfoDetail
         let cityInfoDatailVC = CityInfoDetailViewController.identifier
         
         if travel.ad {

@@ -11,8 +11,6 @@ class RestaurantViewController: UIViewController {
     
     let UD = UserDefaultsManager()
     
-    let identifier = RestaurantTableViewCell.identifier
-    
     var originalRestaurantList: [Restaurant] = [] {
         didSet {
             RestaurantTableView.reloadData()
@@ -45,8 +43,8 @@ class RestaurantViewController: UIViewController {
         RestaurantTableView.delegate = self
         RestaurantTableView.dataSource = self
         
-        let xib = UINib(nibName: identifier, bundle: nil)
-        RestaurantTableView.register(xib, forCellReuseIdentifier: identifier)
+        let xib = UINib(nibName: RestaurantTableViewCell.identifier, bundle: nil)
+        RestaurantTableView.register(xib, forCellReuseIdentifier: RestaurantTableViewCell.identifier)
         
         encodingArrayToBase64(data: RestaurantList().restaurantArray, key: "restaurant")
         
@@ -196,7 +194,7 @@ extension RestaurantViewController: UITableViewDelegate, UITableViewDataSource {
     // 셀 데이터 & 디자인
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as! RestaurantTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: RestaurantTableViewCell.identifier) as! RestaurantTableViewCell
         let restaurant = filteredRestaurantList[indexPath.row]
         
         cell.configureCellUI()
@@ -211,7 +209,7 @@ extension RestaurantViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let data = filteredRestaurantList[indexPath.row]
         
-        let sb = UIStoryboard(name: "RestaurantMap", bundle: nil)
+        let sb = UIStoryboard(name: StoryboardName.restaurantMap, bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: RestaurantMapViewController.identifier) as! RestaurantMapViewController
         
         vc.mapData = data
