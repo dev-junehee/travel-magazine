@@ -16,10 +16,25 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0El-AF-hcp">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0El-AF-hcp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="0fg-Pz-VIR"/>
+                            <constraint firstItem="0El-AF-hcp" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="3vn-Uo-0kc"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="0El-AF-hcp" secondAttribute="trailing" id="i7F-3a-oqS"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="0El-AF-hcp" secondAttribute="bottom" id="mzj-ba-bGl"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="STQ-hF-gUA"/>
+                    <connections>
+                        <outlet property="chatTableView" destination="0El-AF-hcp" id="reS-A9-Iig"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

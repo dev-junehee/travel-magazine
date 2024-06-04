@@ -12,7 +12,7 @@ class TravelTalkViewController: UIViewController {
     @IBOutlet var talkSearchBar: UISearchBar!
     @IBOutlet var talkTableView: UITableView!
     
-    var chatRoomList: [ChatRoom] = mockChatList
+    var chatRoomList: [ChatRoom] = chatRoomData
     var fileredList: [ChatRoom] = []
     
     override func viewDidLoad() {
@@ -36,6 +36,7 @@ class TravelTalkViewController: UIViewController {
         talkTableView.delegate = self
         talkTableView.dataSource = self
         
+        talkTableView.separatorStyle = .none
         let xib = UINib(nibName: ChatRoomTableViewCell.identifier, bundle: nil)
         talkTableView.register(xib, forCellReuseIdentifier: ChatRoomTableViewCell.identifier)
     }
