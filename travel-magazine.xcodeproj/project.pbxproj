@@ -30,6 +30,8 @@
 		C46196BA2C0DFAC7007D3B6B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46196B92C0DFAC7007D3B6B /* ChatViewController.swift */; };
 		C46196BD2C0E906C007D3B6B /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46196BB2C0E906C007D3B6B /* ChatTableViewCell.swift */; };
 		C46196BE2C0E906C007D3B6B /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C46196BC2C0E906C007D3B6B /* ChatTableViewCell.xib */; };
+		C46196D32C0F149B007D3B6B /* myChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46196D12C0F149B007D3B6B /* myChatTableViewCell.swift */; };
+		C46196D42C0F149B007D3B6B /* myChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C46196D22C0F149B007D3B6B /* myChatTableViewCell.xib */; };
 		C4708FA42C074E7F00E171F1 /* CityInfoDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4708FA32C074E7F00E171F1 /* CityInfoDetail.storyboard */; };
 		C4708FA62C074E8A00E171F1 /* CityAdDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4708FA52C074E8A00E171F1 /* CityAdDetail.storyboard */; };
 		C4708FA82C074F7800E171F1 /* CityInfoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4708FA72C074F7700E171F1 /* CityInfoDetailViewController.swift */; };
@@ -84,6 +86,8 @@
 		C46196B92C0DFAC7007D3B6B /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		C46196BB2C0E906C007D3B6B /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		C46196BC2C0E906C007D3B6B /* ChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
+		C46196D12C0F149B007D3B6B /* myChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myChatTableViewCell.swift; sourceTree = "<group>"; };
+		C46196D22C0F149B007D3B6B /* myChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = myChatTableViewCell.xib; sourceTree = "<group>"; };
 		C4708FA32C074E7F00E171F1 /* CityInfoDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CityInfoDetail.storyboard; sourceTree = "<group>"; };
 		C4708FA52C074E8A00E171F1 /* CityAdDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CityAdDetail.storyboard; sourceTree = "<group>"; };
 		C4708FA72C074F7700E171F1 /* CityInfoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInfoDetailViewController.swift; sourceTree = "<group>"; };
@@ -227,6 +231,8 @@
 				C46196B22C0DCDE3007D3B6B /* ChatRoomTableViewCell.xib */,
 				C46196BB2C0E906C007D3B6B /* ChatTableViewCell.swift */,
 				C46196BC2C0E906C007D3B6B /* ChatTableViewCell.xib */,
+				C46196D12C0F149B007D3B6B /* myChatTableViewCell.swift */,
+				C46196D22C0F149B007D3B6B /* myChatTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -348,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C48B9DD92C04903100073FA5 /* RestaurantTableViewCell.xib in Resources */,
+				C46196D42C0F149B007D3B6B /* myChatTableViewCell.xib in Resources */,
 				C4CAF0DE2C04B8D100CFCBAB /* CityAdTableViewCell.xib in Resources */,
 				C4B80BE62C03562600710EA3 /* Assets.xcassets in Resources */,
 				C46196B82C0DF853007D3B6B /* Chat.storyboard in Resources */,
@@ -405,6 +412,7 @@
 				C4550D142C04B54B005DF918 /* CityInfoViewController.swift in Sources */,
 				C4CAF0DF2C04B8D100CFCBAB /* CityAdTableViewCell.swift in Sources */,
 				C46196BD2C0E906C007D3B6B /* ChatTableViewCell.swift in Sources */,
+				C46196D32C0F149B007D3B6B /* myChatTableViewCell.swift in Sources */,
 				C46196AA2C0DBF4B007D3B6B /* StoryboardName.swift in Sources */,
 				C46196BA2C0DFAC7007D3B6B /* ChatViewController.swift in Sources */,
 			);

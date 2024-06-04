@@ -21,7 +21,7 @@ class ChatRoomTableViewCell: UITableViewCell {
 
     func configureCellUI() {
         chatRoomIMGView.layer.borderWidth = 1
-        chatRoomIMGView.layer.borderColor = UIColor.lightGray.cgColor
+        chatRoomIMGView.layer.borderColor = Colors.lightGray4.cgColor
         chatRoomIMGView.layer.cornerRadius = 25
         chatRoomIMGView.contentMode = .scaleAspectFit
         
@@ -41,7 +41,6 @@ class ChatRoomTableViewCell: UITableViewCell {
             return
         }
         recentDate.text = formatDate(date: date)
-//        recentDate.text = "00.00.00"
     }
     
     // 날짜 포맷 함수 (yy.MM.dd)

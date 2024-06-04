@@ -17,7 +17,7 @@
     - Push - Pop
 - Protocol
 - MapKit
-- Enum
+- Enum, rawValue
 
 <br />
 
@@ -84,6 +84,11 @@
     - 백그라운드 색상 UIColor.random() 적용
     - 광고 셀 클릭 시 광고 셀 색상과 동일한 view present 되도록 수정 (텍스트만 전달 → 데이터 전체 전달)
 
+#### 2024-06-04 (Tue)
+- 트래블톡
+    - 채팅방 리스트 화면 구현
+    - 채팅 화면 구현
+    
 <br />
 
 ## 화면 구성 (추가 예정)

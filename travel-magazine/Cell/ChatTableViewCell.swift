@@ -17,28 +17,36 @@ class ChatTableViewCell: UITableViewCell {
     
     @IBOutlet var chatDateLabel: UILabel!
     
-    var chatList: [Chat]?
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         configureCellUI()
     }
 
     func configureCellUI() {
-        //임시
-        chatProfileIMGView.image = UIImage.bran
-        chatUserNameLabel.text = "Bran"
+        chatProfileIMGView.layer.borderWidth = 1
+        chatProfileIMGView.layer.borderColor = Colors.lightGray4.cgColor
+        chatProfileIMGView.layer.cornerRadius = 20
+        chatProfileIMGView.contentMode = .scaleAspectFit
+        
+        chatUserNameLabel.font = Fonts.title16
+        
         chatMessageBox.text = ""
         chatMessageBox.numberOfLines = 0
         chatMessageBox.layer.borderWidth = 1
-        chatMessageBox.layer.borderColor = UIColor.lightGray.cgColor
+        chatMessageBox.layer.borderColor = Colors.lightGray4.cgColor
         chatMessageBox.layer.cornerRadius = 10
-        chatMessageText.text = "푸시푸시푸시푸시푸시푸시 잔디는 생물인거 아시죵 매일 물을 주셔야 살 수 있습니다 으하핳하 푸시"
+        
+        chatMessageText.font = Fonts.subTitle14
         chatMessageText.numberOfLines = 0
-        chatDateLabel.text = "08:16 오후"
+        
+        chatDateLabel.font = Fonts.small
+        chatDateLabel.textColor = Colors.gray
     }
     
-    func configureCellData(_ chatData: [Chat]) {
-        print(chatData)
+    func configureCellData(data: Chat) {
+        chatProfileIMGView.image = UIImage(named: data.user.rawValue)
+        chatUserNameLabel.text = data.user.rawValue
+        chatMessageText.text = data.message
+        chatDateLabel.text = data.date
     }
 }

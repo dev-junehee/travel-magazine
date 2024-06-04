@@ -11,7 +11,7 @@ enum User: String {
     case jack = "Jack"
     case bran = "Bran"
     case den = "Den"
-    case user //본인
+    case user = "JuneHee"
     case other_friend = "내옆자리의앞자리에개발잘하는친구"
     case simsim = "심심이"
     
@@ -89,7 +89,7 @@ let chatRoomData: [ChatRoom] = [
                      message: "제.. 제가 푸쉬를 안했군요... 얼른 푸쉬하도록 하겠습니다..."),
                 Chat(user: .jack,
                      date: "2024-06-11 13:29",
-                     message: "00님~ 아직도 푸쉬가 안되어있네요 ^_^ 수업 끝나고 면담 진행하도록 할게요~~ 끝나고 남아주세요~"),
+                     message: "\(User.user.rawValue)님~ 아직도 푸쉬가 안되어있네요 ^_^ 수업 끝나고 면담 진행하도록 할게요~~ 끝나고 남아주세요~"),
                 Chat(user: .user,
                      date: "2024-06-11 13:31",
                      message: "넵.."),

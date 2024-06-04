@@ -7,6 +7,7 @@
 
 import UIKit
 
+// 트래블톡 메인 화면
 class TravelTalkViewController: UIViewController {
     
     @IBOutlet var talkSearchBar: UISearchBar!
@@ -65,6 +66,7 @@ extension TravelTalkViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: ChatRoomTableViewCell.identifier, for: indexPath) as! ChatRoomTableViewCell
         
         cell.selectionStyle = .none
+        
         cell.configureCellUI()
         cell.configureCellData(data: chatRoom)
         

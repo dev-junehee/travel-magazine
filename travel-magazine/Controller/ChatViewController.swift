@@ -7,6 +7,7 @@
 
 import UIKit
 
+// 채팅방 내부 화면
 class ChatViewController: UIViewController {
     
     @IBOutlet var chatTableView: UITableView!
@@ -30,6 +31,9 @@ class ChatViewController: UIViewController {
         let xib = UINib(nibName: ChatTableViewCell.identifier, bundle: nil)
         chatTableView.register(xib, forCellReuseIdentifier: ChatTableViewCell.identifier)
         
+        let myXib = UINib(nibName: myChatTableViewCell.identifier, bundle: nil)
+        chatTableView.register(myXib, forCellReuseIdentifier: myChatTableViewCell.identifier)
+        
     }
 
     @objc func popBarButtonClicked() {
@@ -45,15 +49,28 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let chatList = chatData.chatList
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: ChatTableViewCell.identifier, for: indexPath) as! ChatTableViewCell
-        
-        cell.selectionStyle = .none
-        cell.configureCellUI()
-        cell.configureCellData(chatList)
-        
-        return cell
+        let idx = indexPath.row
+        let chat = chatData.chatList[idx]
+
+        if chat.user == User.user {
+            print("")
+            let cell = tableView.dequeueReusableCell(withIdentifier: myChatTableViewCell.identifier, for: indexPath) as! myChatTableViewCell
+            
+            cell.selectionStyle = .none
+            cell.configureCellUI()
+            cell.configureCellData(data: chat)
+            
+            return cell
+            
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: ChatTableViewCell.identifier, for: indexPath) as! ChatTableViewCell
+            
+            cell.selectionStyle = .none
+            cell.configureCellUI()
+            cell.configureCellData(data: chat)
+            
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
